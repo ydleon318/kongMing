@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="com.hrbb.modle">
+    <!--<resultMap id="addCaseResultMap" type="com.hrbb.modle.CasesVo">-->
+        <!--<id column="case_id" property="caseId" jdbcType="Integer"/>-->
+        <!--<result column="api_name" property="apiName" jdbcType="varchar"/>-->
+        <!--<result column="product_name" property="productName" jdbcType="varchar"/>-->
+        <!--<result column="tester" property="tester" jdbcType="varchar"/>-->
+        <!--<result column="url" property="url" jdbcType="varchar"/>-->
+        <!--<result column="method" property="method" jdbcType="varchar"/>-->
+        <!--<result column="request_params" property="requestParams" jdbcType="varchar"/>-->
+        <!--<result column="create_time" property="createTime" jdbcType="datetime"/>-->
+        <!--<result column="update_time" property="updateTime" jdbcType="datetime"/>-->
+        <!--<result column="del_flag" property="delFlag" jdbcType="Integer"/>-->
+    <!--</resultMap>-->
+    <!--<sql id="addCase_Column_List">-->
+        <!--case_id,api_name,product_name,tester,url,method,request_params,create_time,update_time,del_flag-->
+    <!--</sql>-->
+
+    <!--<select id="selectList" resultMap="addCaseResultMap" parameterType="java.util.Map">-->
+        <!--select-->
+        <!--<include refid="addCase_Column_List"/>-->
+        <!--from from api_addCases-->
+        <!--<where>-->
+            <!--<if test="case_id != null">-->
+                <!--and case_id = #{caseId}-->
+            <!--</if>-->
+            <!--<if test="api_name != null">-->
+                <!--and api_name = #{apiName}-->
+            <!--</if>-->
+            <!--<if test="product_name != null">-->
+                <!--and product_name = #{productName}-->
+            <!--</if>-->
+            <!--<if test="tester != null">-->
+                <!--and tester = #{tester}-->
+            <!--</if>-->
+            <!--<if test="tester != null">-->
+                <!--and tester = #{tester}-->
+            <!--</if>-->
+        <!--</where>-->
+        <!--order by case_id desc limit #{start},#{limit}-->
+    <!--</select>-->
+
+    <!--<select id="selectCount" resultType="java.lang.Integer" parameterType="java.util.Map">-->
+        <!--SELECT COUNT(1) from api_addCases-->
+        <!--<where>-->
+            <!--<if test="case_id != null">-->
+                <!--and case_id = #{caseId}-->
+            <!--</if>-->
+            <!--<if test="api_name != null">-->
+                <!--and api_name = #{apiName}-->
+            <!--</if>-->
+            <!--<if test="product_name != null">-->
+                <!--and product_name = #{productName}-->
+            <!--</if>-->
+            <!--<if test="tester != null">-->
+                <!--and tester = #{tester}-->
+            <!--</if>-->
+            <!--<if test="tester != null">-->
+                <!--and tester = #{tester}-->
+            <!--</if>-->
+        <!--</where>-->
+    <!--</select>-->
+
+    <!--添加测试用例-->
+    <insert id="addCase" parameterType="com.hrbb.modle.CasesVo">
+        INSERT INTO api_addCases(caseId,apiName,productName,tester,url,method,requestParams,createTime,updateTime,delFlag,excutedFlag)
+        VALUES(#{caseId},#{apiName},#{productName},#{tester},#{url},#{method},#{requestParams},NOW(),NOW(),#{delFlag},#{excutedFlag})
+    </insert>
+
+    <!--更新用例信息-->
+    <update id="updataCase" parameterType="com.hrbb.modle.CasesVo">
+        UPDATE api_addCases SET apiName = #{apiName},productName = #{productName},tester = #{tester},url = #{url},
+        method = #{method},requestParams = #{requestParams},updateTime = NOW()
+        WHERE caseId = #{caseId}
+    </update>
+
+    <!--删除用例-->
+    <update id="delCase">
+        UPDATE api_addCases SET delFlag = '1' where caseId = #{caseId}
+    </update>
+
+    <!--获取用例信息-->
+    <select id="getCaseInfo" parameterType="com.hrbb.modle.CasesVo" resultType="com.hrbb.modle.CasesVo">
+        select * from api_addCases
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null != caseId and '' !=caseId">
+                AND caseId=#{caseId}
+            </if>
+            <if test="null != apiName and '' !=apiName">
+                AND apiName=#{apiName}
+            </if>
+            <if test="null != productName and '' !=productName">
+                AND productName=#{productName}
+            </if>
+            <if test="null != tester and '' !=tester">
+                AND tester=#{tester}
+            </if>
+            <if test="null != url and '' !=url">
+                AND url=#{url}
+            </if>
+            <if test="null != method and '' !=method">
+                AND method=#{method}
+            </if>
+            <if test="null != createTime and '' !=createTime">
+                AND createTime=#{createTime}
+            </if>
+            <if test="null != updateTime and '' !=updateTime">
+                AND updateTime=#{updateTime}
+            </if>
+            <if test="null != delFlag and '' !=delFlag">
+                AND delFlag=#{delFlag}
+            </if>
+            <if test="null != excutedFlag and '' !=excutedFlag">
+                AND excutedFlag=#{excutedFlag}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getExecutTestCase" resultType="com.hrbb.modle.CasesVo">
+        select * from api_addCases where caseId = #{caseId}
+    </select>
+
+    <update id="updataExecutTestCaseFlag">
+        UPDATE api_addCases SET excutedFlag = '1' WHERE caseId = #{caseId}
+    </update>
+
+    <insert id="insertExecutCustomTestCaseLog" parameterType="com.hrbb.modle.executeCustomizeCaseLog">
+        insert into api_executCustomizeCaseLog
+        (caseId,apiName,productName,executUrl,tester,responseInfo,statusCode)
+        values(#{caseId},#{apiName},#{productName},#{executUrl},#{tester},#{responseInfo},#{statusCode})
+    </insert>
+
+    <select id="getExecutedCaseLog" resultType="com.hrbb.modle.executeCustomizeCaseLog">
+        select * from api_executCustomizeCaseLog where caseId = #{caseId}
+    </select>
+</mapper>
