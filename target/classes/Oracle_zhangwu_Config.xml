@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--引入外部properties文件  -->
+    <properties resource="db.properties"/>
+    <!-- 注册对象的空间命名 -->
+    <environments default="zhangwu245">
+        <environment id="ZHANGWU_245">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!-- 1.加载数据库驱动 -->
+                <property name="driver" value="${oracle_zhangwu_driver}"/>
+                <!-- 2.数据库连接地址 -->
+                <property name="url" value="${oracle_zhangwu_url}"/>
+                <!-- 数据库用户... -->
+                <property name="username" value="${oracle_zhangwu_username}"/>
+                <!-- 数据库密码... -->
+                <property name="password" value="${oracle_zhangwu_password}"/>
+            </dataSource>
+        </environment>
+        <environment id="ZHANGWU_6">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!-- 1.加载数据库驱动 -->
+                <property name="driver" value="${oracle_zhangwu6_driver}"/>
+                <!-- 2.数据库连接地址 -->
+                <property name="url" value="${oracle_zhangwu6_url}"/>
+                <!-- 数据库用户... -->
+                <property name="username" value="${oracle_zhangwu6_username}"/>
+                <!-- 数据库密码... -->
+                <property name="password" value="${oracle_zhangwu6_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 注册映射文件：java对象与数据库之间的xml文件路径！ -->
+    <mappers>
+        <mapper resource="mapper/Oracle_zhangwu_SQLMapper.xml"/>
+    </mappers>
+</configuration>
