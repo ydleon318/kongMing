@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hrbb</groupId>
-    <artifactId>kongMing_autoTest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>di.yang</groupId>
+    <artifactId>kongMing_project</artifactId>
+    <version>1.0</version>
 
 
     <properties>

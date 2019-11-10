@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="di.yang.modle.api">
+
+    <update id="updataBankOrg" >
+        update T_BANK_ORG set WORKDATE =to_date( #{workDate},'yyyy-mm-dd hh24:mi:ss') where ORGID = '101'
+    </update>
+
+    <update id="updataBatchDate" parameterType="di.yang.modle.updateBatchDateVo">
+        update T_CFG_FINANCE_PROD set BATCH_DATE = to_date(#{batchDate},'yyyy-mm-dd hh24:mi:ss'),BATCH_STATE = 'y' where CHANNEL_NO = #{channelNo}
+    </update>
+
+</mapper>
