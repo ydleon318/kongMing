@@ -4,12 +4,52 @@
 <!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
 <mapper namespace="di.yang.modle.api">
 
-    <update id="updataBankOrg" >
-        update T_BANK_ORG set WORKDATE =to_date( #{workDate},'yyyy-mm-dd hh24:mi:ss') where ORGID = '101'
+    <!--添加接口业务流程测试产品数据-->
+    <insert id="addApiProcessTest" parameterType="di.yang.modle.api.apiProcessTest">
+        INSERT INTO api_process_test(apitestname,apitestdesc,apitester,create_time,product_id)
+        VALUES (#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId});
+    </insert>
+
+    <!--添加接口业务流程测试步骤用例-->
+    <insert id="addApiProcessStep" parameterType="di.yang.modle.api.apiProcessStep">
+        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,create_time,apitest_id)
+        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId})
+    </insert>
+
+    <!--更新接口业务流程测试产品数据-->
+    <update id="updataApiProcessTest" parameterType="di.yang.modle.api.apiProcessTest">
+        UPDATE api_process_test
+        <trim prefix="set" suffixOverrides=",">
+            <if test="apitestname != null and '' !=apitestname">
+                apitestname=#{apitestname},</if>
+            <if test="apitestdesc != null and '' !=apitestdesc">
+                apitestdesc=#{apitestdesc},</if>
+            <if test="apitester != null and '' !=apitester">
+                apitester=#{apitester},</if>
+            <if test="product_id != null and '' !=product_id">
+                product_id=#{productId},</if>
+        </trim>
+        WHERE id = #{id}
     </update>
 
-    <update id="updataBatchDate" parameterType="di.yang.modle.updateBatchDateVo">
-        update T_CFG_FINANCE_PROD set BATCH_DATE = to_date(#{batchDate},'yyyy-mm-dd hh24:mi:ss'),BATCH_STATE = 'y' where CHANNEL_NO = #{channelNo}
+    <!--更新接口业务流程测试步骤用例-->
+    <update id="updataApiProcessStep" parameterType="di.yang.modle.api.apiProcessStep">
+        UPDATE api_process_step
+        <trim prefix="set" suffixOverrides=",">
+            <if test="apiname != null and '' !=apiname">
+                apiname=#{apiname},</if>
+            <if test="apiurl != null and '' !=apiurl">
+                apiurl=#{apiurl},</if>
+            <if test="apistep != null and '' !=apistep">
+                apistep=#{apistep},</if>
+            <if test="apiparamvalue != null and '' !=apiparamvalue">
+                apiparamvalue=#{apiparamvalue},</if>
+            <if test="apimethod != null and '' !=apimethod">
+                apimethod=#{apimethod},</if>
+            <if test="apitest_id != null and '' !=apitest_id">
+                apitest_id=#{apitestId},</if>
+        </trim>
+        WHERE id = #{id}
     </update>
 
 </mapper>
