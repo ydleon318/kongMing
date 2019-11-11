@@ -303,7 +303,11 @@
             <version>2.5</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>4.4.1</version>
+        </dependency>
 
     </dependencies>
 
