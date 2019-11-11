@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-C:\workspace\kongMing\src\main\java\com\hrbb\controllerService\impl\singleApiCasesServiceImpl.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\FileDirectorySearch.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controller\singleApiCasesController.java
-C:\workspace\kongMing\src\main\java\com\hrbb\modle\updateBatchDateVo.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\impl\BankOrgImpl.java
-C:\workspace\kongMing\src\main\java\com\hrbb\Application.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\BatchDate.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\impl\TaskCasesImpl.java
-C:\workspace\kongMing\src\main\java\com\hrbb\modle\CasesVo.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\HttpUtil.java
-C:\workspace\kongMing\src\main\java\com\hrbb\test\demo.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\MyWebDriver.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\BankOrg.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controller\excuteRunPiController.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\ReadSetting.java
-C:\workspace\kongMing\src\main\java\com\hrbb\config\ExtentTestNGIReporterListener.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\BaseGetData.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\DataBaseUtil.java
-C:\workspace\kongMing\src\main\java\com\hrbb\enumList\DataSourceEnvironment.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\impl\BatchDateImpl.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\Assertion.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\BetterHttpClient.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controllerService\singleApiCasesService.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controllerService\impl\excuteRunPiImpl.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\Tools.java
-C:\workspace\kongMing\src\main\java\com\hrbb\getData\TaskCases.java
-C:\workspace\kongMing\src\main\java\com\hrbb\modle\executeCustomizeCaseLog.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controllerService\excuteRunPi.java
-C:\workspace\kongMing\src\main\java\com\hrbb\controller\BaseController.java
-C:\workspace\kongMing\src\main\java\com\hrbb\utils\StringUtil.java
-=======
 D:\workspace\kongMing\src\main\java\com\hrbb\utils\StringUtil.java
 D:\workspace\kongMing\src\main\java\com\hrbb\test\demo.java
 D:\workspace\kongMing\src\main\java\com\hrbb\getData\BankOrg.java
@@ -62,4 +30,3 @@ D:\workspace\kongMing\src\main\java\com\hrbb\getData\impl\BatchDateImpl.java
 D:\workspace\kongMing\src\main\java\com\hrbb\utils\MyAndroidDriver.java
 D:\workspace\kongMing\src\main\java\com\hrbb\getData\BaseGetData.java
 D:\workspace\kongMing\src\main\java\com\hrbb\modle\CasesVo.java
->>>>>>> yangdi01

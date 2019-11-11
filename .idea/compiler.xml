@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kongMing_autoTest" />
+        <module name="kongMing_project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="kongMing_autoTest" target="1.8" />
+      <module name="kongMing_project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
