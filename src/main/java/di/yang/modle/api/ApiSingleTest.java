@@ -1,9 +1,12 @@
 package di.yang.modle.api;
 
 import lombok.Data;
+import org.springframework.stereotype.Repository;
+
 import java.util.Date;
 
 @Data
+@Repository
 public class ApiSingleTest {
     private int id;
     private String apiname;

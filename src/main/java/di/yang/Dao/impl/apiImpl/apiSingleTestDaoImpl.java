@@ -3,9 +3,11 @@ package di.yang.Dao.impl.apiImpl;
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.api.apiSingleTestDao;
 import di.yang.modle.api.ApiSingleTest;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class apiSingleTestDaoImpl extends BaseGetData implements apiSingleTestDao {
     String dataBasexml = "KongmingDB_config.xml";
     @Override
