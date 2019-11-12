@@ -3,11 +3,11 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import di.yang.controllerService.impl.singleApiCasesServiceImpl;
-import di.yang.controllerService.singleApiCasesService;
+import di.yang.service.impl.singleApiCasesServiceImpl;
+import di.yang.service.singleApiCasesService;
 import di.yang.enumList.DataSourceEnvironment;
-import di.yang.getData.TaskCases;
-import di.yang.getData.impl.TaskCasesImpl;
+import di.yang.Dao.TaskCases;
+import di.yang.Dao.impl.TaskCasesImpl;
 import di.yang.modle.CasesVo;
 import di.yang.test.demo;
 import di.yang.utils.MyWebDriver;

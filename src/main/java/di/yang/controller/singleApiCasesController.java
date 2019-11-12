@@ -2,7 +2,7 @@ package di.yang.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import di.yang.controllerService.singleApiCasesService;
+import di.yang.service.singleApiCasesService;
 import di.yang.modle.CasesVo;
 import di.yang.modle.executeCustomizeCaseLog;
 import org.slf4j.Logger;
