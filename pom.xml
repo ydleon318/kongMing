@@ -11,12 +11,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 测试结果存放路径 -->
-
-        <jmeter.result.jtl.dir>${project.build.directory}\jmeter\results</jmeter.result.jtl.dir>
-        <!-- 测试报表存放路径 -->
-
-        <jmeter.result.html.dir>${project.build.directory}\jmeter\html</jmeter.result.html.dir>
 
     </properties>
 
@@ -35,95 +29,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.lazerycode.jmeter</groupId>-->
-                <!--<artifactId>jmeter-maven-plugin</artifactId>-->
-                <!--<version>2.9.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>jmeter-tests</id>-->
-                        <!--<goals>-->
-                            <!--<goal>jmeter</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<resultsFileFormat>jtl</resultsFileFormat>  &lt;!&ndash;jmx脚本文件生成相应jtl文件&ndash;&gt;-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--&lt;!&ndash; 设置ignoreResultFailures，必须把 jmeter-check-results加上&ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>jmeter-check-results</id>-->
-                        <!--<goals>-->
-                            <!--<goal>results</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash; 指定jmeter版本 &ndash;&gt;-->
-                    <!--<jmeterVersion>5.0</jmeterVersion>-->
-                    <!--&lt;!&ndash; 设置jmeter生成结果文件格式 &ndash;&gt;-->
-                    <!--<resultsFileFormat>xml</resultsFileFormat>-->
-                    <!--&lt;!&ndash; 设置忽略失败是否停止运行 &ndash;&gt;-->
-                    <!--<ignoreResultFailures>true</ignoreResultFailures>-->
-                    <!--&lt;!&ndash;设置结果是否有时间戳 &ndash;&gt;-->
-                    <!--<testResultsTimestamp>true</testResultsTimestamp>-->
-                    <!--<testFilesIncluded>-->
-                        <!--&lt;!&ndash; //指定运行的jmeter脚本 &ndash;&gt;-->
-                        <!--<jMeterTestFile>发布会系统测试.jmx</jMeterTestFile>-->
-                    <!--</testFilesIncluded>-->
-                    <!--&lt;!&ndash; 指定jtl生成目录 &ndash;&gt;-->
-                    <!--<resultsDirectory>${jmeter.result.jtl.dir}</resultsDirectory>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--&lt;!&ndash;根据xsl模版把jtl文件转换成html &ndash;&gt;-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>xml-maven-plugin</artifactId>-->
-                <!--<version>1.0-beta-3</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>verify</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>transform</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<transformationSets>-->
-                        <!--<transformationSet>-->
-                            <!--<dir>${jmeter.result.jtl.dir}</dir>-->
-                            <!--<stylesheet>src\test\resources\jmeter-results-report_21.xsl</stylesheet>-->
-                            <!--<outputDir>${jmeter.result.html.dir}</outputDir>-->
-                            <!--&lt;!&ndash; 把jtl格式转传承html &ndash;&gt;-->
-                            <!--<fileMappers>-->
-                                <!--<fileMapper-->
-                                        <!--implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">-->
-                                    <!--<targetExtension>html</targetExtension>-->
-                                <!--</fileMapper>-->
-                            <!--</fileMappers>-->
-                        <!--</transformationSet>-->
-                        <!--<transformationSet>-->
-                            <!--<dir>${jmeter.result.jtl.dir}</dir>-->
-                            <!--<stylesheet>src\test\resources\jmeter-results-detail-report_21.xsl</stylesheet>-->
-                            <!--<outputDir>${jmeter.result.html.dir1}</outputDir>-->
-                            <!--&lt;!&ndash; 把jtl格式转传承html &ndash;&gt;-->
-                            <!--<fileMappers>-->
-                                <!--<fileMapper-->
-                                        <!--implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">-->
-                                    <!--<targetExtension>html</targetExtension>-->
-                                <!--</fileMapper>-->
-                            <!--</fileMappers>-->
-                        <!--</transformationSet>-->
-                    <!--</transformationSets>-->
-                <!--</configuration>-->
-                <!--&lt;!&ndash; using XSLT 2.0 &ndash;&gt;-->
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>net.sf.saxon</groupId>-->
-                        <!--<artifactId>saxon</artifactId>-->
-                        <!--<version>8.7</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 
@@ -134,11 +39,11 @@
         <version>2.1.1.RELEASE</version>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>log4j</groupId>-->
+            <!--<artifactId>log4j</artifactId>-->
+            <!--<version>1.2.17</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
