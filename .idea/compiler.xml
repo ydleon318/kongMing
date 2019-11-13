@@ -18,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kongMing" options="-parameters" />
       <module name="kongMing_autoTest" options="-parameters" />
     </option>
   </component>

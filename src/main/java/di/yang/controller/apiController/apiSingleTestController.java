@@ -23,7 +23,7 @@ public class apiSingleTestController extends BaseController {
     @PostMapping(value = "/addApiSingleCase")
     public ResponseEntity<?> addApiSingleCase(@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
-        Tools.step("addApiSingleCase param is--->{}"+param);
+        Tools.step("addApiSingleCase param is--->"+param);
         apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
         boolean flag = apiservice.addApiSingle(apiSingleTest);
         if (flag){
@@ -31,13 +31,14 @@ public class apiSingleTestController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
+        Tools.step("addApiSingleCase result is--->"+result);
         return result;
     }
 
     @PostMapping(value = "/updataApiSingleTestCase")
     public ResponseEntity<?> updataApiSingleTestCase (@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
-        Tools.step("updataApiSingleTestCase param is--->{}"+param);
+        Tools.step("updataApiSingleTestCase param is--->"+param);
         apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
         boolean flag = apiservice.updataApiSingleTest(apiSingleTest);
         if (flag){
@@ -45,6 +46,7 @@ public class apiSingleTestController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
+        Tools.step("addApiSingleCase result is--->"+result);
         return result;
     }
 

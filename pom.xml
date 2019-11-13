@@ -8,13 +8,6 @@
     <artifactId>kongMing</artifactId>
     <version>1.0</version>
 
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    </properties>
-
-
     <build>
         <plugins>
             <plugin>
@@ -39,11 +32,6 @@
         <version>2.1.1.RELEASE</version>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -82,31 +70,44 @@
             <version>5.1.6</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>log4j-over-slf4j</artifactId>-->
-            <!--<version>1.7.25</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.29</version>
+        </dependency>
 
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--Web项目必须加上-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.oracle</groupId>-->
-            <!--<artifactId>ojdbc6</artifactId>-->
-            <!--<version>11.2.0.4</version>-->
-        <!--</dependency>-->
 
         <!--selenium依赖-->
         <dependency>
@@ -161,29 +162,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
-        <!--引入jmeter-->
-        <dependency>
-            <groupId>org.apache.jmeter</groupId>
-            <artifactId>ApacheJMeter_java</artifactId>
-            <version>5.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.jmeter</groupId>
-            <artifactId>ApacheJMeter_core</artifactId>
-            <version>5.1.1</version>
-        </dependency>
-        <!--spring boot rabbitmq集成-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.amqp</groupId>-->
-            <!--<artifactId>spring-rabbit</artifactId>-->
-            <!--<version>1.3.9.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.amqp</groupId>-->
-            <!--<artifactId>spring-amqp</artifactId>-->
-            <!--<version>1.3.9.RELEASE</version>-->
-        <!--</dependency>-->
-
         <!--appium依赖-->
         <dependency>
             <groupId>io.appium</groupId>
@@ -208,11 +186,11 @@
             <version>2.5</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>net.sourceforge.tess4j</groupId>
-            <artifactId>tess4j</artifactId>
-            <version>4.4.1</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.sourceforge.tess4j</groupId>-->
+            <!--<artifactId>tess4j</artifactId>-->
+            <!--<version>4.4.1</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 
