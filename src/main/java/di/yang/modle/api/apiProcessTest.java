@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ApiProcessTest {
+public class apiProcessTest {
     private int id;
     private String apitestname;
     private String apitestdesc;

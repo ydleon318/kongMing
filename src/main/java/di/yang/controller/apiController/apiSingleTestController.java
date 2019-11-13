@@ -3,7 +3,7 @@ package di.yang.controller.apiController;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import di.yang.controller.BaseController;
-import di.yang.modle.api.ApiSingleTest;
+import di.yang.modle.api.apiSingleTest;
 import di.yang.service.apiService.apiSingleTestService;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class apiSingleTestController extends BaseController {
     public ResponseEntity<?> addApiSingleCase(@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
         Tools.step("param is--->{}"+param);
-        ApiSingleTest apiSingleTest = JSON.toJavaObject(param,ApiSingleTest.class);
+        apiSingleTest apiSingleTest = JSON.toJavaObject(param, di.yang.modle.api.apiSingleTest.class);
         boolean flag = apiservice.addApiSingle(apiSingleTest);
         if (flag){
             result = buildSuccessResponse(flag);
@@ -38,7 +38,7 @@ public class apiSingleTestController extends BaseController {
     public ResponseEntity<?> updataApiSingleTestCase (@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
         Tools.step("param is--->{}"+param);
-        ApiSingleTest apiSingleTest = JSON.toJavaObject(param,ApiSingleTest.class);
+        apiSingleTest apiSingleTest = JSON.toJavaObject(param, di.yang.modle.api.apiSingleTest.class);
         boolean flag = apiservice.updataApiSingleTest(apiSingleTest);
         if (flag){
             result = buildSuccessResponse(flag);

@@ -1,6 +1,6 @@
 package di.yang.Dao.api;
 
-import di.yang.modle.api.ApiProcessTest;
+import di.yang.modle.api.apiProcessTest;
 
 import java.util.List;
 
@@ -10,19 +10,19 @@ public interface apiProcessTestDao {
      * @param apiProcessTest
      * @return
      */
-    boolean addApiProcessTest (ApiProcessTest apiProcessTest);
+    boolean addApiProcessTest (apiProcessTest apiProcessTest);
 
     /**
      * 更新业务流程测试用例
      * @param apiProcessTest
      * @return
      */
-    boolean updataApiProcessTest (ApiProcessTest apiProcessTest);
+    boolean updataApiProcessTest (apiProcessTest apiProcessTest);
 
     /**
      * 查询业务流程测试用例
      * @param apiProcessTest
      * @return
      */
-    List<ApiProcessTest> getApiProcessTestInfo (ApiProcessTest apiProcessTest);
+    List<apiProcessTest> getApiProcessTestInfo (apiProcessTest apiProcessTest);
 }

@@ -1,6 +1,6 @@
 package di.yang.Dao.api;
 
-import di.yang.modle.api.ApiProcessStep;
+import di.yang.modle.api.apiProcessStep;
 
 import java.util.List;
 
@@ -10,19 +10,19 @@ public interface ApiProcessStepDao {
      * @param apiProcessStep
      * @return
      */
-    boolean addApiProcessStep (ApiProcessStep apiProcessStep);
+    boolean addApiProcessStep (apiProcessStep apiProcessStep);
 
     /**
      * 修改业务流程接口测试步骤
      * @param apiProcessStep
      * @return
      */
-    boolean updataApiProcessStep (ApiProcessStep apiProcessStep);
+    boolean updataApiProcessStep (apiProcessStep apiProcessStep);
 
     /**
      * 查询业务流程接口测试步骤
      * @param apiProcessStep
      * @return
      */
-    List<ApiProcessStep> getApiProcessStepInfo (ApiProcessStep apiProcessStep);
+    List<apiProcessStep> getApiProcessStepInfo (apiProcessStep apiProcessStep);
 }

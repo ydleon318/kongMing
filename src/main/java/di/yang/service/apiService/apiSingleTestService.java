@@ -1,13 +1,13 @@
 package di.yang.service.apiService;
 
-import di.yang.modle.api.ApiSingleTest;
+import di.yang.modle.api.apiSingleTest;
 
 import java.util.List;
 
 public interface apiSingleTestService {
-    boolean addApiSingle (ApiSingleTest apiSingle);
+    boolean addApiSingle (apiSingleTest apiSingle);
 
-    boolean updataApiSingleTest(ApiSingleTest apiSingle);
+    boolean updataApiSingleTest(apiSingleTest apiSingle);
 
-    List<ApiSingleTest> getApiSingleTestInfo(ApiSingleTest apiSingle);
+    List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle);
 }

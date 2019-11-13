@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import javax.annotation.PreDestroy;
 
 @EnableScheduling
-@SpringBootApplication(scanBasePackages = "com.hrbb")
+@SpringBootApplication(scanBasePackages = "di.yang")
 @EnableAutoConfiguration(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
 public class Application {
     private static ConfigurableApplicationContext context;

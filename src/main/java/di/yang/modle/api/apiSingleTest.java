@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @Repository
-public class ApiSingleTest {
+public class apiSingleTest {
     private int id;
     private String apiname;
     private String apiurl;

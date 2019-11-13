@@ -1,7 +1,7 @@
 package di.yang.Dao.api;
 
 
-import di.yang.modle.api.ApiSingleTest;
+import di.yang.modle.api.apiSingleTest;
 import java.util.List;
 
 
@@ -11,19 +11,19 @@ public interface apiSingleTestDao {
      * @param apiSingle
      * @return
      */
-    boolean addApiSingle(ApiSingleTest apiSingle);
+    boolean addApiSingle(apiSingleTest apiSingle);
 
     /**
      * 修改单一接口测试用例
      * @param apiSingle
      * @return
      */
-    boolean updataApiSingleTest(ApiSingleTest apiSingle);
+    boolean updataApiSingleTest(apiSingleTest apiSingle);
 
     /**
      * 查询单一接口测试用例
      * @param apiSingle
      * @return
      */
-    List<ApiSingleTest> getApiSingleTestInfo(ApiSingleTest apiSingle);
+    List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle);
 }

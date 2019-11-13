@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ApiProcessStep {
+public class apiProcessStep {
     private int id;
     private String apiname;
     private String apiurl;

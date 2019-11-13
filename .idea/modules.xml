@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/kongMing_autoTest.iml" filepath="$PROJECT_DIR$/kongMing_autoTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kongMing.iml" filepath="$PROJECT_DIR$/kongMing.iml" />
     </modules>
   </component>
 </project>

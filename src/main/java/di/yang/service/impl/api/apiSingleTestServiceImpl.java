@@ -1,8 +1,8 @@
 package di.yang.service.impl.api;
 
 import di.yang.Dao.api.apiSingleTestDao;
-import di.yang.modle.api.ApiSingleTest;
 import di.yang.service.apiService.apiSingleTestService;
+import di.yang.modle.api.apiSingleTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -13,26 +13,26 @@ import java.util.List;
 @Repository
 public class apiSingleTestServiceImpl implements apiSingleTestService {
     @Autowired
-    private apiSingleTestDao apisingle;
+    private apiSingleTestDao apisingleDao;
 
     @Autowired
-    private ApiSingleTest apiSingleTest;
+    private di.yang.modle.api.apiSingleTest apiSingleTest;
 
     @Override
-    public boolean addApiSingle(ApiSingleTest apiSingle) {
-        boolean data = apisingle.addApiSingle(apiSingleTest);
+    public boolean addApiSingle(apiSingleTest apiSingle) {
+        boolean data = apisingleDao.addApiSingle(apiSingle);
         return data;
     }
 
     @Override
-    public boolean updataApiSingleTest(ApiSingleTest apiSingle) {
-        boolean data = apisingle.updataApiSingleTest(apiSingle);
+    public boolean updataApiSingleTest(apiSingleTest apiSingle) {
+        boolean data = apisingleDao.updataApiSingleTest(apiSingle);
         return data;
     }
 
     @Override
-    public List<ApiSingleTest> getApiSingleTestInfo(ApiSingleTest apiSingle) {
-        List<ApiSingleTest> api = apisingle.getApiSingleTestInfo(apiSingle);
+    public List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle) {
+        List<apiSingleTest> api = apisingleDao.getApiSingleTestInfo(apiSingle);
         return api;
     }
 }
