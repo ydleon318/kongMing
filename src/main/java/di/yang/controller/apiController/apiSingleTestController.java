@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/excute")
+@RequestMapping(value = "/singleApi")
 public class apiSingleTestController extends BaseController {
 //    private static Logger log = LoggerFactory.getLogger(apiSingleTestController.class.getName());
     @Autowired
@@ -23,8 +23,8 @@ public class apiSingleTestController extends BaseController {
     @PostMapping(value = "/addApiSingleCase")
     public ResponseEntity<?> addApiSingleCase(@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
-        Tools.step("param is--->{}"+param);
-        apiSingleTest apiSingleTest = JSON.toJavaObject(param, di.yang.modle.api.apiSingleTest.class);
+        Tools.step("addApiSingleCase param is--->{}"+param);
+        apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
         boolean flag = apiservice.addApiSingle(apiSingleTest);
         if (flag){
             result = buildSuccessResponse(flag);
@@ -37,8 +37,8 @@ public class apiSingleTestController extends BaseController {
     @PostMapping(value = "/updataApiSingleTestCase")
     public ResponseEntity<?> updataApiSingleTestCase (@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
-        Tools.step("param is--->{}"+param);
-        apiSingleTest apiSingleTest = JSON.toJavaObject(param, di.yang.modle.api.apiSingleTest.class);
+        Tools.step("updataApiSingleTestCase param is--->{}"+param);
+        apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
         boolean flag = apiservice.updataApiSingleTest(apiSingleTest);
         if (flag){
             result = buildSuccessResponse(flag);

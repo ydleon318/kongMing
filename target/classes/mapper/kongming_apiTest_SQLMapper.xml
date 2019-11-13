@@ -132,7 +132,7 @@
                 apiparamvalue=#{apiparamvalue},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
-            <if test="product_id != null and '' !=product_id">
+            <if test="productId != null and '' !=productId">
                 product_id=#{productId},</if>
         </trim>
         WHERE id = #{id}

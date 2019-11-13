@@ -26,7 +26,7 @@
                 apitestdesc=#{apitestdesc},</if>
             <if test="apitester != null and '' !=apitester">
                 apitester=#{apitester},</if>
-            <if test="product_id != null and '' !=product_id">
+            <if test="productId != null and '' !=productId">
                 product_id=#{productId},</if>
         </trim>
         WHERE id = #{id}
@@ -46,7 +46,7 @@
                 apiparamvalue=#{apiparamvalue},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
-            <if test="apitest_id != null and '' !=apitest_id">
+            <if test="apitestId != null and '' !=apitestId">
                 apitest_id=#{apitestId},</if>
         </trim>
         WHERE id = #{id}
@@ -68,10 +68,10 @@
             <if test="null != apitestresult and '' !=apitestresult">
                 AND apitestresult=#{apitestresult}
             </if>
-            <if test="null != create_time and '' !=create_time">
+            <if test="null != createTime and '' !=createTime">
                 AND create_time like '%${createTime}%'
             </if>
-            <if test="null != product_id and '' !=product_id">
+            <if test="null != productId and '' !=productId">
                 AND product_id=#{productId}
             </if>
         </trim>
@@ -105,10 +105,10 @@
             <if test="null != apistatus and '' !=apistatus">
                 AND apistatus=#{apistatus}
             </if>
-            <if test="null != create_time and '' !=create_time">
+            <if test="null != createTime and '' !=createTime">
                 AND create_time like '%${createTime}%'
             </if>
-            <if test="null != apitest_id and '' !=apitest_id">
+            <if test="null != apitestId and '' !=apitestId">
                 AND apitest_id=#{apitestId}
             </if>
         </trim>
@@ -132,7 +132,7 @@
                 apiparamvalue=#{apiparamvalue},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
-            <if test="product_id != null and '' !=product_id">
+            <if test="productId != null and '' !=productId">
                 product_id=#{productId},</if>
         </trim>
         WHERE id = #{id}
@@ -163,10 +163,10 @@
             <if test="null != apistatus and '' !=apistatus">
                 AND apistatus=#{apistatus}
             </if>
-            <if test="null != create_time and '' !=create_time">
+            <if test="null != createTime and '' !=createTime">
                 AND create_time like '%${createTime}%'
             </if>
-            <if test="null != product_id and '' !=product_id">
+            <if test="null != productId and '' !=productId">
                 AND product_id=#{productId}
             </if>
         </trim>
