@@ -25,6 +25,8 @@
         </plugins>
     </build>
 
+
+
     <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -32,6 +34,11 @@
         <version>2.1.1.RELEASE</version>
     </parent>
     <dependencies>
+        <dependency>
+            <groupId>Gatling</groupId>
+            <artifactId>Gatling</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
