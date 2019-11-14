@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Gatling" />
         <module name="kongMing" />
         <module name="kongMing_project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Gatling" target="1.8" />
       <module name="kongMing" target="1.8" />
       <module name="kongMing_autoTest" target="1.8" />
       <module name="kongMing_project" target="1.8" />
