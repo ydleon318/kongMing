@@ -1,4 +1,4 @@
-package di.yang.modle;
+package di.yang.Vo;
 
 import lombok.Data;
 import org.springframework.stereotype.Repository;

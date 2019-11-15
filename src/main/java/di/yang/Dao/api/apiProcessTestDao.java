@@ -1,6 +1,6 @@
 package di.yang.Dao.api;
 
-import di.yang.modle.api.apiProcessTest;
+import di.yang.Vo.api.apiProcessTest;
 
 import java.util.List;
 

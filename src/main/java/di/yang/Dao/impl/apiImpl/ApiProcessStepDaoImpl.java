@@ -2,7 +2,7 @@ package di.yang.Dao.impl.apiImpl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.api.ApiProcessStepDao;
-import di.yang.modle.api.apiProcessStep;
+import di.yang.Vo.api.apiProcessStep;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStep
 
     @Override
     public List<apiProcessStep> getApiProcessStepInfo(apiProcessStep apiProcessStep) {
-        List<di.yang.modle.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
+        List<di.yang.Vo.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
         return apiProcessSteps;
     }
 }

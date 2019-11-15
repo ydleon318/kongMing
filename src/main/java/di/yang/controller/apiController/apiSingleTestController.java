@@ -3,7 +3,7 @@ package di.yang.controller.apiController;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import di.yang.controller.BaseController;
-import di.yang.modle.api.apiSingleTest;
+import di.yang.Vo.api.apiSingleTest;
 import di.yang.service.apiService.apiSingleTestService;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;

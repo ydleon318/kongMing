@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import di.yang.service.excuteRunPi;
 import di.yang.Dao.BankOrg;
 import di.yang.Dao.BatchDate;
-import di.yang.modle.updateBatchDateVo;
+import di.yang.Vo.updateBatchDateVo;
 import di.yang.utils.BetterHttpClient;
 import di.yang.utils.MyWebDriver;
 import di.yang.utils.Tools;

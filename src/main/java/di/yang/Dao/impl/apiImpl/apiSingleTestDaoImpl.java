@@ -2,7 +2,7 @@ package di.yang.Dao.impl.apiImpl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.api.apiSingleTestDao;
-import di.yang.modle.api.apiSingleTest;
+import di.yang.Vo.api.apiSingleTest;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

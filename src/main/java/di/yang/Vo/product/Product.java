@@ -1,4 +1,4 @@
-package di.yang.modle.product;
+package di.yang.Vo.product;
 
 import lombok.Data;
 import java.util.Date;

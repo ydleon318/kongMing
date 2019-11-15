@@ -2,22 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
-<mapper namespace="di.yang.modle.api">
+<mapper namespace="di.yang.Vo.api">
 
     <!--添加接口业务流程测试产品数据-->
-    <insert id="addApiProcessTest" parameterType="di.yang.modle.api.apiProcessTest">
+    <insert id="addApiProcessTest" parameterType="di.yang.Vo.api.apiProcessTest">
         INSERT INTO api_process_test (apitestname,apitestdesc,apitester,create_time,product_id)
         VALUES (#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
     </insert>
 
     <!--添加接口业务流程测试步骤用例-->
-    <insert id="addApiProcessStep" parameterType="di.yang.modle.api.apiProcessStep">
+    <insert id="addApiProcessStep" parameterType="di.yang.Vo.api.apiProcessStep">
         INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,create_time,apitest_id)
         VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId})
     </insert>
 
     <!--更新接口业务流程测试产品数据-->
-    <update id="updataApiProcessTest" parameterType="di.yang.modle.api.apiProcessTest">
+    <update id="updataApiProcessTest" parameterType="di.yang.Vo.api.apiProcessTest">
         UPDATE api_process_test
         <trim prefix="set" suffixOverrides=",">
             <if test="apitestname != null and '' !=apitestname">
@@ -33,7 +33,7 @@
     </update>
 
     <!--更新接口业务流程测试步骤用例-->
-    <update id="updataApiProcessStep" parameterType="di.yang.modle.api.apiProcessStep">
+    <update id="updataApiProcessStep" parameterType="di.yang.Vo.api.apiProcessStep">
         UPDATE api_process_step
         <trim prefix="set" suffixOverrides=",">
             <if test="apiname != null and '' !=apiname">
@@ -53,7 +53,7 @@
     </update>
 
     <!--查询接口业务流程测试产品数据-->
-    <select id="getApiProcessTestInfo" parameterType="di.yang.modle.api.apiProcessTest" resultType="di.yang.modle.api.apiProcessTest">
+    <select id="getApiProcessTestInfo" parameterType="di.yang.Vo.api.apiProcessTest" resultType="di.yang.Vo.api.apiProcessTest">
         select * from api_process_test
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != id and '' !=id">
@@ -78,7 +78,7 @@
     </select>
 
     <!--查询接口业务流程测试步骤用例-->
-    <select id="getApiProcessStepInfo" parameterType="di.yang.modle.api.apiProcessStep" resultType="di.yang.modle.api.apiProcessStep">
+    <select id="getApiProcessStepInfo" parameterType="di.yang.Vo.api.apiProcessStep" resultType="di.yang.Vo.api.apiProcessStep">
         select * from api_process_step
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != id and '' !=id">
@@ -115,13 +115,13 @@
     </select>
 
     <!--增加单一接口测试用例-->
-    <insert id="addApiSingleTest" parameterType="di.yang.modle.api.apiSingleTest">
+    <insert id="addApiSingleTest" parameterType="di.yang.Vo.api.apiSingleTest">
         INSERT INTO api_single_test (apiname,apiurl,apiparamvalue,apimethod,create_time,product_id)
         VALUES (#{apiname},#{apiurl},#{apiparamvalue},#{apimethod},NOW(),#{productId})
     </insert>
 
     <!--更新单一接口测试用例-->
-    <update id="updataApiSingleTest" parameterType="di.yang.modle.api.apiSingleTest">
+    <update id="updataApiSingleTest" parameterType="di.yang.Vo.api.apiSingleTest">
         UPDATE api_single_test
         <trim prefix="set" suffixOverrides=",">
             <if test="apiname != null and '' !=apiname">
@@ -139,7 +139,7 @@
     </update>
 
     <!--单一接口测试用例查询-->
-    <select id="getApiSingleTestInfo" parameterType="di.yang.modle.api.apiSingleTest" resultType="di.yang.modle.api.apiSingleTest">
+    <select id="getApiSingleTestInfo" parameterType="di.yang.Vo.api.apiSingleTest" resultType="di.yang.Vo.api.apiSingleTest">
         select * from api_single_test
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != id and '' !=id">

@@ -2,8 +2,8 @@ package di.yang.Dao.impl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.TaskCases;
-import di.yang.modle.CasesVo;
-import di.yang.modle.executeCustomizeCaseLog;
+import di.yang.Vo.CasesVo;
+import di.yang.Vo.executeCustomizeCaseLog;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

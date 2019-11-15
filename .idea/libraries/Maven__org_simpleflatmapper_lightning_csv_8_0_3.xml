@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.simpleflatmapper:lightning-csv:8.0.3">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3.jar!/" />
+      <root url="jar://C:/apache-maven-3.5.3/local/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3-javadoc.jar!/" />
+      <root url="jar://C:/apache-maven-3.5.3/local/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3-sources.jar!/" />
+      <root url="jar://C:/apache-maven-3.5.3/local/org/simpleflatmapper/lightning-csv/8.0.3/lightning-csv-8.0.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -8,7 +8,7 @@
         update T_BANK_ORG set WORKDATE =to_date( #{workDate},'yyyy-mm-dd hh24:mi:ss') where ORGID = '101'
     </update>
 
-    <update id="updataBatchDate" parameterType="di.yang.modle.updateBatchDateVo">
+    <update id="updataBatchDate" parameterType="di.yang.Vo.updateBatchDateVo">
         update T_CFG_FINANCE_PROD set BATCH_DATE = to_date(#{batchDate},'yyyy-mm-dd hh24:mi:ss'),BATCH_STATE = 'y' where CHANNEL_NO = #{channelNo}
     </update>
 
