@@ -1,6 +1,6 @@
 package di.yang.service.apiService;
 
-import di.yang.Vo.api.apiSingleTest;
+import di.yang.module.api.apiSingleTest;
 
 import java.util.List;
 

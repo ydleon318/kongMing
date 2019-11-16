@@ -1,7 +1,7 @@
 package di.yang.Dao.api;
 
 
-import di.yang.Vo.api.apiSingleTest;
+import di.yang.module.api.apiSingleTest;
 import java.util.List;
 
 

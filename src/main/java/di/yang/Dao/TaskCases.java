@@ -1,7 +1,7 @@
 package di.yang.Dao;
 
-import di.yang.Vo.CasesVo;
-import di.yang.Vo.executeCustomizeCaseLog;
+import di.yang.module.CasesVo;
+import di.yang.module.executeCustomizeCaseLog;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

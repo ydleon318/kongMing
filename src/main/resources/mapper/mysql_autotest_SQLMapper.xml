@@ -65,13 +65,13 @@
     <!--</select>-->
 
     <!--添加测试用例-->
-    <insert id="addCase" parameterType="di.yang.Vo.CasesVo">
+    <insert id="addCase" parameterType="di.yang.module.CasesVo">
         INSERT INTO api_addCases(caseId,apiName,productName,tester,url,method,requestParams,createTime,updateTime,delFlag,excutedFlag)
         VALUES(#{caseId},#{apiName},#{productName},#{tester},#{url},#{method},#{requestParams},NOW(),NOW(),#{delFlag},#{excutedFlag})
     </insert>
 
     <!--更新用例信息-->
-    <update id="updataCase" parameterType="di.yang.Vo.CasesVo">
+    <update id="updataCase" parameterType="di.yang.module.CasesVo">
         UPDATE api_addCases SET apiName = #{apiName},productName = #{productName},tester = #{tester},url = #{url},
         method = #{method},requestParams = #{requestParams},updateTime = NOW()
         WHERE caseId = #{caseId}
@@ -83,7 +83,7 @@
     </update>
 
     <!--获取用例信息-->
-    <select id="getCaseInfo" parameterType="di.yang.Vo.CasesVo" resultType="di.yang.Vo.CasesVo">
+    <select id="getCaseInfo" parameterType="di.yang.module.CasesVo" resultType="di.yang.module.CasesVo">
         select * from api_addCases
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != caseId and '' !=caseId">
@@ -119,7 +119,7 @@
         </trim>
     </select>
 
-    <select id="getExecutTestCase" resultType="di.yang.Vo.CasesVo">
+    <select id="getExecutTestCase" resultType="di.yang.module.CasesVo">
         select * from api_addCases where caseId = #{caseId}
     </select>
 
@@ -127,13 +127,13 @@
         UPDATE api_addCases SET excutedFlag = '1' WHERE caseId = #{caseId}
     </update>
 
-    <insert id="insertExecutCustomTestCaseLog" parameterType="di.yang.Vo.executeCustomizeCaseLog">
+    <insert id="insertExecutCustomTestCaseLog" parameterType="di.yang.module.executeCustomizeCaseLog">
         insert into api_executCustomizeCaseLog
         (caseId,apiName,productName,executUrl,tester,responseInfo,statusCode)
         values(#{caseId},#{apiName},#{productName},#{executUrl},#{tester},#{responseInfo},#{statusCode})
     </insert>
 
-    <select id="getExecutedCaseLog" resultType="di.yang.Vo.executeCustomizeCaseLog">
+    <select id="getExecutedCaseLog" resultType="di.yang.module.executeCustomizeCaseLog">
         select * from api_executCustomizeCaseLog where caseId = #{caseId}
     </select>
 </mapper>

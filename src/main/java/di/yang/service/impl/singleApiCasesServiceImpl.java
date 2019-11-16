@@ -2,8 +2,8 @@ package di.yang.service.impl;
 
 import di.yang.service.singleApiCasesService;
 import di.yang.Dao.TaskCases;
-import di.yang.Vo.CasesVo;
-import di.yang.Vo.executeCustomizeCaseLog;
+import di.yang.module.CasesVo;
+import di.yang.module.executeCustomizeCaseLog;
 import di.yang.utils.BetterHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@ package di.yang.Dao.impl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.BatchDate;
-import di.yang.Vo.updateBatchDateVo;
+import di.yang.module.updateBatchDateVo;
 import org.springframework.stereotype.Repository;
 
 @Repository

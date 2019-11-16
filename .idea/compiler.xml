@@ -8,20 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Gatling" />
         <module name="kongMing" />
-        <module name="kongMing_project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Gatling" target="1.8" />
       <module name="kongMing" target="1.8" />
-      <module name="kongMing_autoTest" target="1.8" />
-      <module name="kongMing_project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="kongMing" options="-parameters" />
-      <module name="kongMing_autoTest" options="-parameters" />
     </option>
   </component>
 </project>

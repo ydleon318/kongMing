@@ -1,7 +1,7 @@
 package di.yang.service;
 
 import com.alibaba.fastjson.JSONObject;
-import di.yang.Vo.updateBatchDateVo;
+import di.yang.module.updateBatchDateVo;
 
 public interface excuteRunPi {
     boolean updateDB(updateBatchDateVo updateBatchDateVo,String workDate,String environment);

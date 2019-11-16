@@ -8,7 +8,7 @@ import di.yang.service.singleApiCasesService;
 import di.yang.enumList.DataSourceEnvironment;
 import di.yang.Dao.TaskCases;
 import di.yang.Dao.impl.TaskCasesImpl;
-import di.yang.Vo.CasesVo;
+import di.yang.module.CasesVo;
 import di.yang.test.demo;
 import di.yang.utils.MyWebDriver;
 import org.testng.TestNG;

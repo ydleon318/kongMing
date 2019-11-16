@@ -24,7 +24,7 @@ public class Tools {
 	 */
 	public static void step(Object param){
 		String step = "step-->" + param;
-		log.info("step--> param = [{}]", param);
+		log.info("step--> param = {}", param);
 		Reporter.log(step);
 	}
 

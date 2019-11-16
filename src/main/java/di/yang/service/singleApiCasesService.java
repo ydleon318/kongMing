@@ -1,8 +1,8 @@
 package di.yang.service;
 
 
-import di.yang.Vo.CasesVo;
-import di.yang.Vo.executeCustomizeCaseLog;
+import di.yang.module.CasesVo;
+import di.yang.module.executeCustomizeCaseLog;
 
 import java.util.List;
 

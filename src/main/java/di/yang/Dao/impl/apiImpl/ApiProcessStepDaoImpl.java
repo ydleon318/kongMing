@@ -2,10 +2,12 @@ package di.yang.Dao.impl.apiImpl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.api.ApiProcessStepDao;
-import di.yang.Vo.api.apiProcessStep;
+import di.yang.module.api.apiProcessStep;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStepDao {
     String dataBasexml = "KongmingDB_config.xml";
     @Override
@@ -22,7 +24,7 @@ public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStep
 
     @Override
     public List<apiProcessStep> getApiProcessStepInfo(apiProcessStep apiProcessStep) {
-        List<di.yang.Vo.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
+        List<di.yang.module.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
         return apiProcessSteps;
     }
 }

@@ -2,7 +2,7 @@ package di.yang.service.impl.api;
 
 import di.yang.Dao.api.apiSingleTestDao;
 import di.yang.service.apiService.apiSingleTestService;
-import di.yang.Vo.api.apiSingleTest;
+import di.yang.module.api.apiSingleTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -14,9 +14,6 @@ import java.util.List;
 public class apiSingleTestServiceImpl implements apiSingleTestService {
     @Autowired
     private apiSingleTestDao apisingleDao;
-
-    @Autowired
-    private di.yang.Vo.api.apiSingleTest apiSingleTest;
 
     @Override
     public boolean addApiSingle(apiSingleTest apiSingle) {

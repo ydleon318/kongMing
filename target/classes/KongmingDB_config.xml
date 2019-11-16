@@ -22,6 +22,7 @@
     </environments>
     <!-- 注册映射文件：java对象与数据库之间的xml文件路径！ -->
     <mappers>
-        <mapper resource="mapper/kongming_apiTest_SQLMapper.xml"/>
+        <mapper resource="mapper/api/kongming_apiTest_SQLMapper.xml"/>
+        <mapper resource="mapper/product/kongming_product_SQLMapper.xml"/>
     </mappers>
 </configuration>
