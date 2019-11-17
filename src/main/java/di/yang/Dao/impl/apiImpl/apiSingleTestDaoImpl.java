@@ -27,4 +27,10 @@ public class apiSingleTestDaoImpl extends BaseGetData implements apiSingleTestDa
         List<apiSingleTest> apiSingleTest = getDataBaseListInfo(dataBasexml,"getApiSingleTestInfo",apiSingle);
         return apiSingleTest;
     }
+
+    @Override
+    public boolean updataApiSingleTestResult(apiSingleTest apiSingle) {
+        boolean flag = upDataBaseInfo(dataBasexml,"updataApiSingleTestResult",apiSingle);
+        return flag;
+    }
 }

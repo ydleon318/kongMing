@@ -51,15 +51,6 @@ public class testNG {
         JSONObject jsonobject = JSON.parseObject(JSON_ARRAY_STR);
         System.out.printf(jsonobject.toString());
         JSONArray jsonArray = JSON.parseArray(jsonobject.getJSONArray("taskId").toString());
-        //JSONArray jsonArray1 = JSONArray.parseArray(JSON_ARRAY_STR);//因为JSONArray继承了JSON，所以这样也是可以的
-        //遍历方式1
-//        int size = jsonArray.size();
-//        for (int i = 0; i < size; i++){
-//            JSONObject jsonObject = jsonArray.getJSONObject(i);
-//            System.out.println(jsonObject.getString("step"));
-//        }
-
-        //遍历方式2
         for (Object obj : jsonArray) {
             JSONObject jsonObject = (JSONObject) obj;
             excuteUI(jsonObject.getString("step"));

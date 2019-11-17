@@ -138,6 +138,18 @@
         WHERE id = #{id}
     </update>
 
+    <!--添加测试结果-->
+    <update id="updataApiSingleTestResult" parameterType="di.yang.module.api.apiSingleTest">
+        UPDATE api_single_test
+        <trim prefix="set" suffixOverrides=",">
+            <if test="apiresponse != null and '' !=apiresponse">
+                apiresponse=#{apiresponse},</if>
+            <if test="apistatus != null and '' !=apistatus">
+                apistatus=#{apistatus},</if>
+        </trim>
+        WHERE id = #{id} AND product_id=#{productId}
+    </update>
+
     <!--单一接口测试用例查询-->
     <select id="getApiSingleTestInfo" parameterType="di.yang.module.api.apiSingleTest" resultType="di.yang.module.api.apiSingleTest">
         select * from api_single_test

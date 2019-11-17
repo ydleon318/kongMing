@@ -8,10 +8,10 @@ import java.util.List;
 public interface BugManageService {
     /**
      * 添加缺陷
-     * @param bugManagement
+     * @param
      * @return
      */
-    boolean addBug (BugManagement bugManagement);
+    boolean addBug (String apiname,String requestparam,String expectresult,String actualresult,int buglevel,String bugcreater,String bugassign,int productid);
 
     /**
      * 修改缺陷状态

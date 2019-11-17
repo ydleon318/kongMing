@@ -1,5 +1,6 @@
 package di.yang.service.apiService;
 
+import com.alibaba.fastjson.JSONObject;
 import di.yang.module.api.apiSingleTest;
 
 import java.util.List;
@@ -25,4 +26,11 @@ public interface apiSingleTestService {
      * @return
      */
     List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle);
+
+    /**
+     * 执行单条测试用例
+     * @param json
+     * @return
+     */
+    boolean executeOneCase(JSONObject json);
 }

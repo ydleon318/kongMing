@@ -20,21 +20,6 @@ public class BugManagementController extends BaseController {
     @Autowired
     private BugManageService bugManageService;
 
-    @PostMapping(value = "/addbug")
-    public ResponseEntity<?> addBug (@RequestBody JSONObject param){
-        ResponseEntity<?> result = null;
-        Tools.step("addBug param is--->"+param);
-        BugManagement bugManagement = JSON.toJavaObject(param, BugManagement.class);
-        boolean flag = bugManageService.addBug(bugManagement);
-        if (flag){
-            result = buildSuccessResponse(flag);
-        }else {
-            result = buildErrorResponse(flag);
-        }
-        Tools.step("addBugResponse is----->"+result);
-        return result;
-    }
-
     @PostMapping(value = "/updataBugStatus")
     public ResponseEntity<?> updataBugStatus (@RequestBody JSONObject param){
         ResponseEntity<?> result = null;

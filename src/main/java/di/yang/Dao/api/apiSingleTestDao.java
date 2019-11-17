@@ -26,4 +26,9 @@ public interface apiSingleTestDao {
      * @return
      */
     List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle);
+
+    /**
+     *添加测试结果
+     */
+    boolean updataApiSingleTestResult(apiSingleTest apiSingle);
 }

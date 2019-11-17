@@ -16,6 +16,7 @@ import java.io.IOException;
 
 public class HttpUtil {
     public static String statuscode = "";
+    public static String responseStr = "";
 
     /**
      * get请求url
@@ -39,6 +40,7 @@ public class HttpUtil {
             }
             HttpEntity httpEntity = response.getEntity();
             jsonObject= JSONObject.parseObject(EntityUtils.toString(httpEntity,"utf-8"));
+            responseStr = jsonObject.toString();
             EntityUtils.consume(httpEntity);
         } catch (ClientProtocolException e) {
             e.printStackTrace();

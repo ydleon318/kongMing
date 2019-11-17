@@ -52,10 +52,10 @@ public class apiSingleTestController extends BaseController {
     @PostMapping(value = "/selectApiSingleTest")
     public JSONObject selectApiSingleTest (@RequestBody JSONObject param){
         JSONObject reponse = new JSONObject();
-        Tools.step("selectProudctData param is--->{}"+param);
+        Tools.step("selectProudctData param is--->"+param);
         apiSingleTest apisingl = JSON.toJavaObject(param, apiSingleTest.class);
         reponse.put("data",apiservice.getApiSingleTestInfo(apisingl));
-        Tools.step("selectProudctData response is--->{}"+reponse);
+        Tools.step("selectProudctData response is--->"+reponse);
         return reponse;
     }
 
