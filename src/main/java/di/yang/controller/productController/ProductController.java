@@ -28,6 +28,7 @@ public class ProductController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
+        Tools.step("addProductInfoResponse is----->"+result);
         return result;
     }
 
@@ -42,16 +43,17 @@ public class ProductController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
+        Tools.step("updataProudctData is----->"+result);
         return result;
     }
 
     @PostMapping(value = "/selectProudctData")
     public JSONObject selectProudctData(@RequestBody JSONObject param){
         JSONObject reponse = new JSONObject();
-        Tools.step("selectProudctData param is--->{}"+param);
+        Tools.step("selectProudctData param is--->"+param);
         Product product = JSON.toJavaObject(param, Product.class);
         reponse.put("data",productService.selectProudctData(product));
-        Tools.step("selectProudctData response is--->{}"+reponse);
+        Tools.step("selectProudctData response is--->"+reponse);
         return reponse;
     }
 }

@@ -116,16 +116,6 @@ public class testNG {
         DataSourceEnvironment environment = DataSourceEnvironment.getEnviron(msg);
         System.out.printf(environment.name());
     }
-    @Test
-    public void test01(){
-        List<CasesVo> lists = new ArrayList<>();
-        cases.setCaseId(10);
-        cases.setDelFlag("0");
-        cases.setExcutedFlag("0");
-        lists = taskCases.selectCases(cases);
-        System.out.printf(lists.toString());
-
-    }
 
     @Test
     public void testNgtest(){

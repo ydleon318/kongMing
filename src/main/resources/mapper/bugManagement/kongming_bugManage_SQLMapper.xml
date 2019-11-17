@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="di.yang.module.bugManagement">
+    <!--bug管理列表-->
+    <insert id="addBug" parameterType="di.yang.module.bugManagement.BugManagement">
+       INSERT INTO bug_management (bugname,bugdetail,bugstatus,buglevel,bugcreater,bugassign,create_time,product_id)
+        VALUES (#{bugname},#{bugdetail},#{bugstatus},#{buglevel},#{bugcreater},#{bugassign},NOW(),#{productId})
+    </insert>
+    <update id="updataBugData" parameterType="di.yang.module.bugManagement.BugManagement">
+        UPDATE bug_management
+        <trim prefix="set" suffixOverrides=",">
+            <if test="bugstatus != null and '' !=bugstatus">
+                bugstatus=#{bugstatus},</if>
+        </trim>
+        WHERE id = #{id} AND product_id = #{productId}
+    </update>
+    <select id="selectBugData" parameterType="di.yang.module.bugManagement.BugManagement" resultType="di.yang.module.bugManagement.BugManagement">
+        select * from bug_management
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null != id and '' !=id">
+                AND id=#{id}
+            </if>
+            <if test="null != bugname and '' !=bugname">
+                AND bugname like '%${bugname}%'
+            </if>
+            <if test="null != bugdetail and '' !=bugdetail">
+                AND bugdetail like '%${bugdetail}%'
+            </if>
+            <if test="null != bugstatus and '' !=bugstatus">
+                AND bugstatus =#{bugstatus}
+            </if>
+            <if test="null != buglevel and '' !=buglevel">
+                AND buglevel =#{buglevel}
+            </if>
+            <if test="null != bugcreater and '' !=bugcreater">
+                AND bugcreater like '%${bugcreater}%'
+            </if>
+            <if test="null != bugassign and '' !=bugassign">
+                AND bugassign like '%${bugassign}%'
+            </if>
+            <if test="null != createTime and '' !=createTime">
+                AND create_time like '%${createTime}%'
+            </if>
+            <if test="null != productId and '' !=productId">
+                AND product_id =#{productId}
+            </if>
+
+        </trim>
+    </select>
+
+
+
+</mapper>

@@ -146,19 +146,19 @@
                 AND id=#{id}
             </if>
             <if test="null != apiname and '' !=apiname">
-                AND apiname=#{apiname}
+                AND apiname like '%${apiname}%'
             </if>
             <if test="null != apiurl and '' !=apiurl">
-                AND apiurl=#{apiurl}
+                AND apiurl like '%${apiurl}%'
             </if>
             <if test="null != apiparamvalue and '' !=apiparamvalue">
-                AND apiparamvalue=#{apiparamvalue}
+                AND apiparamvalue like '%${apiparamvalue}%'
             </if>
             <if test="null != apimethod and '' !=apimethod">
                 AND apimethod=#{apimethod}
             </if>
             <if test="null != apiresult and '' !=apiresult">
-                AND apiresult=#{apiresult}
+                AND apiresult like '%${apiresult}%'
             </if>
             <if test="null != apistatus and '' !=apistatus">
                 AND apistatus=#{apistatus}
