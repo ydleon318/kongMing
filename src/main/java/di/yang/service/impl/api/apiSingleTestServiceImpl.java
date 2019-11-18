@@ -8,6 +8,7 @@ import di.yang.service.apiService.apiSingleTestService;
 import di.yang.module.api.apiSingleTest;
 import di.yang.utils.BetterHttpClient;
 import di.yang.utils.HttpUtil;
+import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -45,30 +46,44 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
     }
 
     /**
-     *执行单条测试用例
+     *执行测试用例
      */
     @Override
-    public boolean executeOneCase(JSONObject json) {
-        JSONArray jsonArray = JSON.parseArray(json.getJSONArray("data").toString());
-        for (Object obj : jsonArray) {
-            JSONObject param = (JSONObject) obj;
-            switch (param.getString("apimethod")){
-                case "GET":
-                    HttpUtil.get(param.getString("apiurl"));
-                    if (HttpUtil.statuscode.equals(param.getString("apiresult"))){
-                        apisingletest.setApistatus(true);
-                        apisingletest.setApiresponse(HttpUtil.responseStr);
-                    }else {
-                        apisingletest.setApistatus(false);
-                        apisingletest.setApiresponse(HttpUtil.responseStr);
-                    }
-                    break;
-                    
+    public boolean executeCases(JSONObject json) {
+        boolean flag = false;
+        try {
+            JSONArray jsonArray = JSON.parseArray(json.getJSONArray("data").toString());
+            for (Object obj : jsonArray) {
+                JSONObject param = (JSONObject) obj;
+                switch (param.getString("apimethod")) {
+                    case "GET":
+                        HttpUtil.get(param.getString("apiurl"));
+                        if (HttpUtil.responseStr.contains(param.getString("apiresult")) && HttpUtil.statuscode.equals("200")) {
+                            apisingletest.setApistatus(true);
+                            apisingletest.setApiresponse(HttpUtil.responseStr);
+                        } else {
+                            apisingletest.setApistatus(false);
+                            apisingletest.setApiresponse(HttpUtil.responseStr);
+                        }
+                        break;
+                    case "POST":
+                        HttpUtil.post(param.getString("apimethod"), param.getString("apiparamvalue"));
+                        if (HttpUtil.responseStr.contains(param.getString("apiresult")) && HttpUtil.statuscode.equals("200")) {
+                            apisingletest.setApistatus(true);
+                            apisingletest.setApiresponse(HttpUtil.responseStr);
+                        } else {
+                            apisingletest.setApistatus(false);
+                            apisingletest.setApiresponse(HttpUtil.responseStr);
+                        }
+                        break;
+                    default:
+                        Tools.error("未知错误");
+                }
             }
-
-
-            param.get("apiparamvalue");
+            flag = true;
+        }catch (Exception e){
+            flag = false;
         }
-        return false;
+        return flag;
     }
 }

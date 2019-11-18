@@ -28,9 +28,9 @@ public interface apiSingleTestService {
     List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle);
 
     /**
-     * 执行单条测试用例
+     * 执行测试用例
      * @param json
      * @return
      */
-    boolean executeOneCase(JSONObject json);
+    boolean executeCases(JSONObject json);
 }
