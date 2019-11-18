@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import di.yang.Dao.api.apiSingleTestDao;
 import di.yang.service.apiService.apiSingleTestService;
 import di.yang.module.api.apiSingleTest;
+import di.yang.service.bugService.BugManageService;
 import di.yang.utils.BetterHttpClient;
 import di.yang.utils.HttpUtil;
 import di.yang.utils.Tools;
@@ -21,8 +22,10 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
     @Autowired
     private apiSingleTestDao apisingleDao;
 
+//    @Autowired
+//    private BetterHttpClient httpClient;
     @Autowired
-    private BetterHttpClient httpClient;
+    private BugManageService bugManageService;
 
     @Autowired
     private apiSingleTest apisingletest;
@@ -64,6 +67,8 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                         } else {
                             apisingletest.setApistatus(false);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
+                            ,HttpUtil.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
                         }
                         break;
                     case "POST":
@@ -74,6 +79,8 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                         } else {
                             apisingletest.setApistatus(false);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
+                                    ,HttpUtil.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
                         }
                         break;
                     default:

@@ -6,13 +6,13 @@
 
     <!--添加接口业务流程测试产品数据-->
     <insert id="addApiProcessTest" parameterType="di.yang.module.api.apiProcessTest">
-        INSERT INTO api_process_test (apitestname,apitestdesc,apitester,create_time,product_id)
+        INSERT INTO api_process_test (apitestname,apitestdesc,apitester,createTime,productId)
         VALUES (#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
     </insert>
 
     <!--添加接口业务流程测试步骤用例-->
     <insert id="addApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
-        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,create_time,apitest_id)
+        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId)
         VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId})
     </insert>
 
@@ -27,7 +27,7 @@
             <if test="apitester != null and '' !=apitester">
                 apitester=#{apitester},</if>
             <if test="productId != null and '' !=productId">
-                product_id=#{productId},</if>
+                productId=#{productId},</if>
         </trim>
         WHERE id = #{id}
     </update>
@@ -47,7 +47,7 @@
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
             <if test="apitestId != null and '' !=apitestId">
-                apitest_id=#{apitestId},</if>
+                apitestId=#{apitestId},</if>
         </trim>
         WHERE id = #{id}
     </update>
@@ -69,10 +69,10 @@
                 AND apitestresult=#{apitestresult}
             </if>
             <if test="null != createTime and '' !=createTime">
-                AND create_time like '%${createTime}%'
+                AND createTime like '%${createTime}%'
             </if>
             <if test="null != productId and '' !=productId">
-                AND product_id=#{productId}
+                AND productId=#{productId}
             </if>
         </trim>
     </select>
@@ -106,17 +106,17 @@
                 AND apistatus=#{apistatus}
             </if>
             <if test="null != createTime and '' !=createTime">
-                AND create_time like '%${createTime}%'
+                AND createTime like '%${createTime}%'
             </if>
             <if test="null != apitestId and '' !=apitestId">
-                AND apitest_id=#{apitestId}
+                AND apitestId=#{apitestId}
             </if>
         </trim>
     </select>
 
     <!--增加单一接口测试用例-->
     <insert id="addApiSingleTest" parameterType="di.yang.module.api.apiSingleTest">
-        INSERT INTO api_single_test (apiname,apiurl,apiparamvalue,apimethod,create_time,product_id)
+        INSERT INTO api_single_test (apiname,apiurl,apiparamvalue,apimethod,createTime,productId)
         VALUES (#{apiname},#{apiurl},#{apiparamvalue},#{apimethod},NOW(),#{productId})
     </insert>
 
@@ -133,9 +133,21 @@
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
             <if test="productId != null and '' !=productId">
-                product_id=#{productId},</if>
+                productId=#{productId},</if>
         </trim>
         WHERE id = #{id}
+    </update>
+
+    <!--添加测试结果-->
+    <update id="updataApiSingleTestResult" parameterType="di.yang.module.api.apiSingleTest">
+        UPDATE api_single_test
+        <trim prefix="set" suffixOverrides=",">
+            <if test="apiresponse != null and '' !=apiresponse">
+                apiresponse=#{apiresponse},</if>
+            <if test="apistatus != null and '' !=apistatus">
+                apistatus=#{apistatus},</if>
+        </trim>
+        WHERE id = #{id} AND productId=#{productId}
     </update>
 
     <!--单一接口测试用例查询-->
@@ -164,10 +176,10 @@
                 AND apistatus=#{apistatus}
             </if>
             <if test="null != createTime and '' !=createTime">
-                AND create_time like '%${createTime}%'
+                AND createTime like '%${createTime}%'
             </if>
             <if test="null != productId and '' !=productId">
-                AND product_id=#{productId}
+                AND productId=#{productId}
             </if>
         </trim>
     </select>

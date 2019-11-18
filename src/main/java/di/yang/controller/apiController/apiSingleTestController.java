@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import di.yang.controller.BaseController;
 import di.yang.module.api.apiSingleTest;
 import di.yang.service.apiService.apiSingleTestService;
+import di.yang.utils.JsonUtils;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,13 +51,27 @@ public class apiSingleTestController extends BaseController {
     }
 
     @PostMapping(value = "/selectApiSingleTest")
-    public JSONObject selectApiSingleTest (@RequestBody JSONObject param){
+    public JSON selectApiSingleTest (@RequestBody JSONObject param){
         JSONObject reponse = new JSONObject();
         Tools.step("selectProudctData param is--->"+param);
-        apiSingleTest apisingl = JSON.toJavaObject(param, apiSingleTest.class);
-        reponse.put("data",apiservice.getApiSingleTestInfo(apisingl));
+        apiSingleTest apisingl = JsonUtils.toObject(String.valueOf(param),apiSingleTest.class);
+        reponse.put("data", JsonUtils.listWithDateToJson(apiservice.getApiSingleTestInfo(apisingl), true));
         Tools.step("selectProudctData response is--->"+reponse);
         return reponse;
+    }
+
+    @PostMapping(value = ("/executeCases"))
+    public ResponseEntity<?> executeCases (@RequestBody JSONObject param){
+        ResponseEntity<?> result = null;
+        Tools.step("executeCases param is--->"+param);
+        boolean flag = apiservice.executeCases(param);
+        if (flag){
+            result = buildSuccessResponse(flag);
+        }else {
+            result = buildErrorResponse(flag);
+        }
+        Tools.step("executeCases result is---->"+result);
+        return result;
     }
 
 }

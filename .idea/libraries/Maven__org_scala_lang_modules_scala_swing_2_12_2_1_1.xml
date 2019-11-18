@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.scala-lang.modules:scala-swing_2.12:2.1.1">
     <CLASSES>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1-javadoc.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1-sources.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/scala-lang/modules/scala-swing_2.12/2.1.1/scala-swing_2.12-2.1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

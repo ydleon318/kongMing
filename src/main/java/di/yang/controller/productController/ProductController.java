@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import di.yang.controller.BaseController;
 import di.yang.module.product.Product;
 import di.yang.service.productService.ProductService;
+import di.yang.utils.JsonUtils;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +53,7 @@ public class ProductController extends BaseController {
         JSONObject reponse = new JSONObject();
         Tools.step("selectProudctData param is--->"+param);
         Product product = JSON.toJavaObject(param, Product.class);
-        reponse.put("data",productService.selectProudctData(product));
+        reponse.put("data", JsonUtils.listWithDateToJson(productService.selectProudctData(product),true));
         Tools.step("selectProudctData response is--->"+reponse);
         return reponse;
     }

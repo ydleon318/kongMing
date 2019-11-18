@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import di.yang.controller.BaseController;
 import di.yang.module.bugManagement.BugManagement;
 import di.yang.service.bugService.BugManageService;
+import di.yang.utils.JsonUtils;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class BugManagementController extends BaseController {
         JSONObject reponse = new JSONObject();
         Tools.step("selectBugs param is--->"+param);
         BugManagement bugManagement = JSON.toJavaObject(param, BugManagement.class);
-        reponse.put("data",bugManageService.selectbugs(bugManagement));
+        reponse.put("data", JsonUtils.listWithDateToJson(bugManageService.selectbugs(bugManagement),true));
         Tools.step("selectBugs response is--->"+reponse);
         return reponse;
     }
