@@ -140,14 +140,7 @@
 
     <!--添加测试结果-->
     <update id="updataApiSingleTestResult" parameterType="di.yang.module.api.apiSingleTest">
-        UPDATE api_single_test
-        <trim prefix="set" suffixOverrides=",">
-            <if test="apiresponse != null and '' !=apiresponse">
-                apiresponse=#{apiresponse},</if>
-            <if test="apistatus != null and '' !=apistatus">
-                apistatus=#{apistatus},</if>
-        </trim>
-        WHERE id = #{id} AND productId=#{productId}
+        UPDATE api_single_test SET apiresponse=#{apiresponse},apistatus=#{apistatus} WHERE id = #{id} AND productId = #{productId}
     </update>
 
     <!--单一接口测试用例查询-->

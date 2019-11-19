@@ -62,11 +62,19 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                     case "GET":
                         HttpUtil.get(param.getString("apiurl"));
                         if (HttpUtil.responseStr.contains(param.getString("apiresult")) && HttpUtil.statuscode.equals("200")) {
-                            apisingletest.setApistatus(true);
+                            apisingletest.setId(param.getInteger("id"));
+                            apisingletest.setProductId(param.getInteger("productId"));
+                            apisingletest.setApistatus(1);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            Tools.step("testcase NO "+param.getString("id")+"is PASS");
                         } else {
-                            apisingletest.setApistatus(false);
+                            apisingletest.setId(param.getInteger("id"));
+                            apisingletest.setProductId(param.getInteger("productId"));
+                            apisingletest.setApistatus(0);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            Tools.step("testcase NO "+param.getString("id")+"is FAILED");
                             bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
                             ,HttpUtil.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
                         }
@@ -74,11 +82,19 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                     case "POST":
                         HttpUtil.post(param.getString("apimethod"), param.getString("apiparamvalue"));
                         if (HttpUtil.responseStr.contains(param.getString("apiresult")) && HttpUtil.statuscode.equals("200")) {
-                            apisingletest.setApistatus(true);
+                            apisingletest.setId(param.getInteger("id"));
+                            apisingletest.setProductId(param.getInteger("productId"));
+                            apisingletest.setApistatus(1);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            Tools.step("testcase NO "+param.getString("id")+"is PASS");
                         } else {
-                            apisingletest.setApistatus(false);
+                            apisingletest.setId(param.getInteger("id"));
+                            apisingletest.setProductId(param.getInteger("productId"));
+                            apisingletest.setApistatus(0);
                             apisingletest.setApiresponse(HttpUtil.responseStr);
+                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            Tools.step("testcase NO "+param.getString("id")+"is FAILED");
                             bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
                                     ,HttpUtil.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
                         }
@@ -89,6 +105,7 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
             }
             flag = true;
         }catch (Exception e){
+            e.printStackTrace();
             flag = false;
         }
         return flag;

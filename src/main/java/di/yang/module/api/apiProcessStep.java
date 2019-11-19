@@ -13,7 +13,7 @@ public class apiProcessStep {
     private String apimethod;
     private String apiresult;
     private String apiresponse;
-    private boolean apistatus;
+    private int apistatus;
     private Date createTime;
     private int apitestId;
 }

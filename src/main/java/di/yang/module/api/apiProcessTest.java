@@ -9,7 +9,7 @@ public class apiProcessTest {
     private String apitestname;
     private String apitestdesc;
     private String apitester;
-    private boolean apitestresult;
+    private int apitestresult;
     private Date createTime;
     private int productId;
 }
