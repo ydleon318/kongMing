@@ -24,5 +24,5 @@ public interface apiProcessTestDao {
      * @param apiProcessTest
      * @return
      */
-    List<apiProcessTest> getApiProcessTestInfo (apiProcessTest apiProcessTest);
+    List<apiProcessTest> selectApiProcessTestInfo (apiProcessTest apiProcessTest);
 }

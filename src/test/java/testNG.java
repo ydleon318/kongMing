@@ -32,6 +32,9 @@ public class testNG {
 
     public void test() {
         XmlSuite suite = new XmlSuite();
+        List<String> lisener = new ArrayList<>();
+        lisener.add("di.yang.config.ExtentTestNGIReporterListener");
+        suite.setListeners(lisener);
         suite.setName("TmpSuite");
         XmlTest test = new XmlTest(suite);
         test.setName("TmpTest");

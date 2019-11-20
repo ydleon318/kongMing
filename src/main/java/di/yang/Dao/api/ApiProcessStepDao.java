@@ -24,5 +24,5 @@ public interface ApiProcessStepDao {
      * @param apiProcessStep
      * @return
      */
-    List<apiProcessStep> getApiProcessStepInfo (apiProcessStep apiProcessStep);
+    List<apiProcessStep> selectApiProcessStepInfo (apiProcessStep apiProcessStep);
 }

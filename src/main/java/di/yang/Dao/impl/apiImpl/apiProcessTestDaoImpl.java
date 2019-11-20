@@ -24,7 +24,7 @@ public class apiProcessTestDaoImpl extends BaseGetData implements apiProcessTest
     }
 
     @Override
-    public List<apiProcessTest> getApiProcessTestInfo(apiProcessTest apiProcessTest) {
+    public List<apiProcessTest> selectApiProcessTestInfo(apiProcessTest apiProcessTest) {
         List<di.yang.module.api.apiProcessTest> apiProcessTests = getDataBaseListInfo(dataBasexml,"getApiProcessTestInfo",apiProcessTest);
         return apiProcessTests;
     }

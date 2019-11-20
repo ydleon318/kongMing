@@ -23,7 +23,7 @@ public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStep
     }
 
     @Override
-    public List<apiProcessStep> getApiProcessStepInfo(apiProcessStep apiProcessStep) {
+    public List<apiProcessStep> selectApiProcessStepInfo(apiProcessStep apiProcessStep) {
         List<di.yang.module.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
         return apiProcessSteps;
     }
