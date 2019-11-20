@@ -5,7 +5,7 @@
 <mapper namespace="di.yang.module.bugManagement">
     <!--bug管理列表-->
     <insert id="addBug" parameterType="di.yang.module.bugManagement.BugManagement">
-       INSERT INTO bug_management (bugname,bugdetail,bugstatus,buglevel,bugcreater,bugassign,create_time,product_id)
+       INSERT INTO bug_management (bugname,bugdetail,bugstatus,buglevel,bugcreater,bugassign,createTime,productId)
         VALUES (#{bugname},#{bugdetail},#{bugstatus},#{buglevel},#{bugcreater},#{bugassign},NOW(),#{productId})
     </insert>
     <update id="updataBugData" parameterType="di.yang.module.bugManagement.BugManagement">
@@ -14,7 +14,7 @@
             <if test="bugstatus != null and '' !=bugstatus">
                 bugstatus=#{bugstatus},</if>
         </trim>
-        WHERE id = #{id} AND product_id = #{productId}
+        WHERE id = #{id} AND productId = #{productId}
     </update>
     <select id="selectBugData" parameterType="di.yang.module.bugManagement.BugManagement" resultType="di.yang.module.bugManagement.BugManagement">
         select * from bug_management
@@ -41,10 +41,10 @@
                 AND bugassign like '%${bugassign}%'
             </if>
             <if test="null != createTime and '' !=createTime">
-                AND create_time like '%${createTime}%'
+                AND createTime like '%${createTime}%'
             </if>
             <if test="null != productId and '' !=productId">
-                AND product_id =#{productId}
+                AND productId =#{productId}
             </if>
 
         </trim>

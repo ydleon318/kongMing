@@ -53,7 +53,8 @@ public class BetterHttpClient {
 
         //执行请求
         response =httpClient.execute(get);
-        System.out.println(getStatusCode());
+        this.responseStr = EntityUtils.toString(response.getEntity());
+        this.codeStuts = getStatusCode();
         printResponse(response);
         //关闭httpclient
         response.close();
