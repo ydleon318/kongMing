@@ -8,7 +8,6 @@ import di.yang.service.apiService.apiSingleTestService;
 import di.yang.module.api.apiSingleTest;
 import di.yang.service.bugService.BugManageService;
 import di.yang.utils.BetterHttpClient;
-import di.yang.utils.HttpUtil;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

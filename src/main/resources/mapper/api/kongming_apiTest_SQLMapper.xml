@@ -26,10 +26,8 @@
                 apitestdesc=#{apitestdesc},</if>
             <if test="apitester != null and '' !=apitester">
                 apitester=#{apitester},</if>
-            <if test="productId != null and '' !=productId">
-                productId=#{productId},</if>
         </trim>
-        WHERE id = #{id}
+        WHERE id = #{id} AND productId = #{productId}
     </update>
 
     <!--更新接口业务流程测试步骤用例-->
@@ -60,10 +58,10 @@
                 AND id=#{id}
             </if>
             <if test="null != apitestname and '' !=apitestname">
-                AND apitestname=#{apitestname}
+                AND apitestname like '%${apitestname}%'
             </if>
             <if test="null != apitester and '' !=apitester">
-                AND apitester=#{apitester}
+                AND apitester like '%${apitester}%'
             </if>
             <if test="null != apitestresult and '' !=apitestresult">
                 AND apitestresult=#{apitestresult}
