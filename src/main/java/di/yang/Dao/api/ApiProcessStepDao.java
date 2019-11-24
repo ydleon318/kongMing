@@ -1,6 +1,8 @@
 package di.yang.Dao.api;
 
+import di.yang.VO.AutoReplaceValueVo;
 import di.yang.module.api.apiProcessStep;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,4 +27,17 @@ public interface ApiProcessStepDao {
      * @return
      */
     List<apiProcessStep> selectApiProcessStepInfo (apiProcessStep apiProcessStep);
+
+    /**
+     * 通过被测产品编号查询测试步骤
+     * @param apitestId
+     * @return
+     */
+    List<apiProcessStep> selectApiProcessStepByProductId (@Param("apitestId") int apitestId);
+
+    /**
+     * 自动替换请求参数值更新库
+     * @param replaceValueVo
+     */
+    boolean updataApiProcessStepRequest(AutoReplaceValueVo replaceValueVo);
 }

@@ -2,6 +2,7 @@ package di.yang.Dao.impl.apiImpl;
 
 import di.yang.Dao.BaseGetData;
 import di.yang.Dao.api.ApiProcessStepDao;
+import di.yang.VO.AutoReplaceValueVo;
 import di.yang.module.api.apiProcessStep;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,18 @@ public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStep
 
     @Override
     public List<apiProcessStep> selectApiProcessStepInfo(apiProcessStep apiProcessStep) {
-        List<di.yang.module.api.apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
+        List<apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"getApiProcessStepInfo",apiProcessStep);
         return apiProcessSteps;
+    }
+
+    @Override
+    public List<apiProcessStep> selectApiProcessStepByProductId(int apitestId) {
+        List<apiProcessStep> apiProcessSteps = getDataBaseListInfo(dataBasexml,"selectApiProcessStepByProductId",apitestId);
+        return apiProcessSteps;
+    }
+
+    @Override
+    public boolean updataApiProcessStepRequest(AutoReplaceValueVo replaceValueVo) {
+        return upDataBaseInfo(dataBasexml,"updataApiProcessStepRequest",replaceValueVo);
     }
 }

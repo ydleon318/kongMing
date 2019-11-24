@@ -6,14 +6,14 @@
 
     <!--添加接口业务流程测试产品数据-->
     <insert id="addApiProcessTest" parameterType="di.yang.module.api.apiProcessTest">
-        INSERT INTO api_process_test (apitestname,apitestdesc,apitester,createTime,productId)
-        VALUES (#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
+        INSERT INTO api_process_test (id,apitestname,apitestdesc,apitester,createTime,productId)
+        VALUES (#{id},#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
     </insert>
 
     <!--添加接口业务流程测试步骤用例-->
     <insert id="addApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
-        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId)
-        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId})
+        INSERT INTO api_process_step (id,apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId)
+        VALUES (#{id},#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId})
     </insert>
 
     <!--更新接口业务流程测试产品数据-->
@@ -44,10 +44,8 @@
                 apiparamvalue=#{apiparamvalue},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
-            <if test="apitestId != null and '' !=apitestId">
-                apitestId=#{apitestId},</if>
         </trim>
-        WHERE id = #{id}
+        WHERE id = #{id} AND apitestId=#{apitestId}
     </update>
 
     <!--查询接口业务流程测试产品数据-->
@@ -75,8 +73,30 @@
         </trim>
     </select>
 
+    <resultMap id="ApiProcessStepMap" type="di.yang.module.api.apiProcessStep">
+        <id property="id" column="id"/>
+        <result property="apiname" column="apiname"/>
+        <result property="apiurl" column="apiurl"/>
+        <result property="apistep" column="apistep"/>
+        <result property="apiparamvalue" column="apiparamvalue"/>
+        <result property="apimethod" column="apimethod"/>
+        <result property="apiresult" column="apiresult"/>
+        <result property="apiresponse" column="apiresponse"/>
+        <result property="apistatus" column="apistatus"/>
+        <result property="createTime" column="createTime"/>
+        <result property="apitestId" column="apitestId"/>
+        <result property="isreplace" column="isreplace"/>
+        <result property="requestLevel" column="request_level"/>
+        <result property="reponseLevel" column="reponse_level"/>
+        <result property="requestKey1" column="request_key1"/>
+        <result property="requestKey2" column="request_key2"/>
+        <result property="requestKey3" column="request_key3"/>
+        <result property="reponseKey1" column="reponse_key1"/>
+        <result property="reponseKey2" column="reponse_key2"/>
+        <result property="reponseKey3" column="reponse_key3"/>
+    </resultMap>
     <!--查询接口业务流程测试步骤用例-->
-    <select id="getApiProcessStepInfo" parameterType="di.yang.module.api.apiProcessStep" resultType="di.yang.module.api.apiProcessStep">
+    <select id="getApiProcessStepInfo" parameterType="di.yang.module.api.apiProcessStep" resultMap="ApiProcessStepMap">
         select * from api_process_step
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != id and '' !=id">
@@ -109,7 +129,20 @@
             <if test="null != apitestId and '' !=apitestId">
                 AND apitestId=#{apitestId}
             </if>
+            <if test="null != isreplace and '' !=isreplace">
+                AND isreplace=#{isreplace}
+            </if>
+            <if test="null != requestLevel and '' !=requestLevel">
+                AND request_level=#{requestLevel}
+            </if>
+            <if test="null != reponseLevel and '' !=reponseLevel">
+                AND reponse_level=#{reponseLevel}
+            </if>
         </trim>
+    </select>
+
+    <select id="selectApiProcessStepByProductId" parameterType="Integer" resultType="di.yang.module.api.apiProcessStep">
+      SELECT * from api_process_step where apitestId = #{apitestId} ORDER BY apistep
     </select>
 
     <!--增加单一接口测试用例-->
@@ -130,13 +163,11 @@
                 apiparamvalue=#{apiparamvalue},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
-            <if test="productId != null and '' !=productId">
-                productId=#{productId},</if>
         </trim>
-        WHERE id = #{id}
+        WHERE id = #{id} AND productId=#{productId}
     </update>
 
-    <!--添加测试结果-->
+    <!--添加单一接口测试结果-->
     <update id="updataApiSingleTestResult" parameterType="di.yang.module.api.apiSingleTest">
         UPDATE api_single_test SET apiresponse=#{apiresponse},apistatus=#{apistatus} WHERE id = #{id} AND productId = #{productId}
     </update>

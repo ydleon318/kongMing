@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.seleniumhq.selenium:jetty-repacked:9.4.7.v20170914">
     <CLASSES>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914-javadoc.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://C:/apache-maven-3.5.3/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914-sources.jar!/" />
+      <root url="jar://G:/apache-maven-3.6.0/local/org/seleniumhq/selenium/jetty-repacked/9.4.7.v20170914/jetty-repacked-9.4.7.v20170914-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

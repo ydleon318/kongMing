@@ -31,6 +31,7 @@ public class BaseController {
         final Map<String, Object> resulpMap = new HashMap<>();
         resulpMap.put(RESPONSE_TAG, ERROR);
         resulpMap.put(RESPONSE_MSG, obj);
+        resulpMap.put("msg","请求未成功");
         return new ResponseEntity<>(resulpMap, HttpStatus.OK);
     }
 
