@@ -114,7 +114,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
         Map<String, Object> key1Map=JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
         key1Map.put(key2,value);
         requestMap.put(key1,String.valueOf(new JSONObject(key1Map)));
-        return new JSONObject(requestMap);
+        return new JSONObject(requestMap).toJSONString().replace("\\","");
     }
 
     /**
@@ -129,11 +129,11 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
     public Object requestLevelThree(String request,String key1,String key2,String key3,Object value){
         Map<String, Object> requestMap= JSON.parseObject(request, HashMap.class);
         Map<String, Object> key1Map=JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
-        Map<String, Object> key2Map=JSON.parseObject(String.valueOf(requestMap.get(key2)), HashMap.class);
+        Map<String, Object> key2Map=JSON.parseObject(String.valueOf(key1Map.get(key2)), HashMap.class);
         key2Map.put(key3,value);
         key1Map.put(key2,String.valueOf(new JSONObject(key2Map)));
         requestMap.put(key1,String.valueOf(new JSONObject(key1Map)));
-        return new JSONObject(requestMap);
+        return new JSONObject(requestMap).toJSONString().replace("\\","");
     }
 
     /**
@@ -148,41 +148,41 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
         List<apiProcessStep> apistep = apiProcessStepDao.selectApiProcessStepByProductId(autoReplaceValueVo.getApitestId());
             switch (apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getRequestLevel()){
                 case 1:
-                    switch (apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseLevel()){
+                    switch (apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseLevel()){
                         case 1:
                             autoReplaceValueVo.setApiparamvalue(String.valueOf(requestLevelOne(apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),responseLevelOne(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1()))));
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         case 2:
                             autoReplaceValueVo.setApiparamvalue(String.valueOf(requestLevelOne(apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),responseLevelTwo(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                             .getReponseKey2()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         case 3:
                             autoReplaceValueVo.setApiparamvalue(String.valueOf(requestLevelOne(apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),responseLevelThree(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse()
-                                    ,apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
-                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey3()))));
+                                    ,apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
+                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey3()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         default:
                             flag = false;
-                            Tools.error("case1数据错误");
+                            Tools.error("数据错误");
                     }
                     break;
                 case 2:
-                    switch (apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseLevel()){
+                    switch (apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseLevel()){
                         case 1:
                             autoReplaceValueVo.setApiparamvalue(String.valueOf(requestLevelTwo(apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),responseLevelOne(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1()))));
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         case 2:
@@ -190,7 +190,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                                     .getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),responseLevelTwo(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                             .getReponseKey2()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
@@ -199,24 +199,24 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                                     .getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),responseLevelThree(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse()
-                                    ,apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
-                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey3()))));
+                                    ,apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
+                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey3()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         default:
                             flag = false;
-                            Tools.error("case2数据错误");
+                            Tools.error("数据错误");
                     }
                     break;
                 case 3:
-                    switch (apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseLevel()){
+                    switch (apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseLevel()){
                         case 1:
                             autoReplaceValueVo.setApiparamvalue(String.valueOf(requestLevelThree(apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getApiparamvalue(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey3(),responseLevelOne(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1()))));
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         case 2:
@@ -225,7 +225,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey3(),responseLevelTwo(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse(),
-                                    apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
+                                    apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                             .getReponseKey2()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
@@ -235,13 +235,13 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                                     .getRequestKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
                                     .getRequestKey3(),responseLevelThree(apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getApiresponse()
-                                    ,apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1)
-                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getResponseReplaceStep()-1).getReponseKey3()))));
+                                    ,apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey1(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1)
+                                            .getReponseKey2(),apistep.get(autoReplaceValueVo.getRequestReplaceStep()-1).getReponseKey3()))));
                             flag = apiProcessStepDao.updataApiProcessStepRequest(autoReplaceValueVo);
                             break;
                         default:
                             flag = false;
-                            Tools.error("case3数据错误");
+                            Tools.error("数据错误");
                     }
                     break;
                 default:

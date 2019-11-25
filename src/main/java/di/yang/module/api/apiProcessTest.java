@@ -1,9 +1,7 @@
 package di.yang.module.api;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.Data;
 import java.util.Date;
 
 @Data

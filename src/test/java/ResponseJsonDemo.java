@@ -78,4 +78,20 @@ public class ResponseJsonDemo {
         JSONObject json = JSON.parseObject(str);
         System.out.printf(String.valueOf(apiProcessStepService.autoReplaceValue(json)));
     }
+
+    @Test
+    public void test06(){
+        String str = "{\"data\":\"{\\\"step\\\":\\\"abcdef\\\",\\\"step2\\\":\\\"{\\\\\\\"no\\\\\\\":\\\\\\\"ABCD\\\\\\\"}\\\"}\",\"status\":0}";
+        String str2 = str.replace("\\","");
+//        Object json = JSON.toJSON(str);
+
+        System.out.printf(str2);
+    }
+
+    @Test
+    public void test07(){
+        Object json = apiProcessStepService.requestLevelThree("{\"data\":{\"step\":\"abcdef\",\"step2\":{\"no\":\"abcd\"}},\"status\":0}","data",
+                "step2","no","ABC");
+        System.out.printf(String.valueOf(json));
+    }
 }
