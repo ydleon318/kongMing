@@ -1,5 +1,6 @@
 package di.yang.service.apiService;
 
+import com.alibaba.fastjson.JSONObject;
 import di.yang.module.api.apiProcessStep;
 
 import java.util.List;
@@ -25,4 +26,11 @@ public interface ApiProcessStepService {
      * @return
      */
     List<apiProcessStep> selectApiProcessStep(apiProcessStep apistep);
+
+    /**
+     * 自动将指定response中字段value值替换指定request中字段value值（支持大部分产品json格式接口自动化测试）
+     * @param param
+     * @return
+     */
+    boolean autoReplaceValue (JSONObject param);
 }

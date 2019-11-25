@@ -141,6 +141,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @param param {"apitestId":,"apistep":,"requestReplaceStep":,"responseReplaceStep":}
      * @return
      */
+    @Override
     public boolean autoReplaceValue(JSONObject param){
         boolean flag = false;
         AutoReplaceValueVo autoReplaceValueVo = JSON.toJavaObject(param,AutoReplaceValueVo.class);
