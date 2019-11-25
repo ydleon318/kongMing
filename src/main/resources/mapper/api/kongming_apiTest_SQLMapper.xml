@@ -26,6 +26,29 @@
                 apitestdesc=#{apitestdesc},</if>
             <if test="apitester != null and '' !=apitester">
                 apitester=#{apitester},</if>
+            <if test="apitestresult != null and '' !=apitestresult">
+                apitestresult=#{apitestresult},</if>
+
+        </trim>
+        WHERE id = #{id} AND productId = #{productId}
+    </update>
+
+    <!--更新接口业务流程测试步骤用例-->
+    <update id="updataApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
+        UPDATE api_process_step
+        <trim prefix="set" suffixOverrides=",">
+            <if test="apiname != null and '' !=apiname">
+                apiname=#{apiname},</if>
+            <if test="apiurl != null and '' !=apiurl">
+                apiurl=#{apiurl},</if>
+            <if test="apistep != null and '' !=apistep">
+                apistep=#{apistep},</if>
+            <if test="apiparamvalue != null and '' !=apiparamvalue">
+                apiparamvalue=#{apiparamvalue},</if>
+            <if test="apimethod != null and '' !=apimethod">
+                apimethod=#{apimethod},</if>
+            <if test="apiresult != null and '' !=apiresult">
+                apiresult=#{apiresult},</if>
             <if test="apiresponse != null and '' !=apiresponse">
                 apiresponse=#{apiresponse},</if>
             <if test="apistatus != null and '' !=apistatus">
@@ -49,26 +72,10 @@
             <if test="reponseKey3 != null and '' !=reponseKey3">
                 reponse_key3=#{reponseKey3},</if>
         </trim>
-        WHERE id = #{id} AND productId = #{productId}
-    </update>
-
-    <!--更新接口业务流程测试步骤用例-->
-    <update id="updataApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
-        UPDATE api_process_step
-        <trim prefix="set" suffixOverrides=",">
-            <if test="apiname != null and '' !=apiname">
-                apiname=#{apiname},</if>
-            <if test="apiurl != null and '' !=apiurl">
-                apiurl=#{apiurl},</if>
-            <if test="apistep != null and '' !=apistep">
-                apistep=#{apistep},</if>
-            <if test="apiparamvalue != null and '' !=apiparamvalue">
-                apiparamvalue=#{apiparamvalue},</if>
-            <if test="apimethod != null and '' !=apimethod">
-                apimethod=#{apimethod},</if>
-        </trim>
         WHERE id = #{id} AND apitestId=#{apitestId}
     </update>
+
+    <!--更新api业务流程测试步骤请求参数-->
     <update id="updataApiProcessStepRequest" parameterType="di.yang.VO.AutoReplaceValueVo">
         UPDATE api_process_step set apiparamvalue=#{apiparamvalue} WHERE apitestId = #{apitestId} AND apistep = #{apistep}
     </update>
@@ -98,6 +105,7 @@
         </trim>
     </select>
 
+    <!--apiProcessStep类resultMap-->
     <resultMap id="ApiProcessStepMap" type="di.yang.module.api.apiProcessStep">
         <id property="id" column="id"/>
         <result property="apiname" column="apiname"/>
@@ -165,8 +173,8 @@
             </if>
         </trim>
     </select>
-    
 
+    <!--通过产品编号查询api业务流程测试步骤-->
     <select id="selectApiProcessStepByProductId" parameterType="Integer" resultMap="ApiProcessStepMap">
       SELECT * from api_process_step where apitestId = #{apitestId} ORDER BY apistep
     </select>

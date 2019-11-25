@@ -28,7 +28,7 @@ public interface ApiProcessStepService {
     List<apiProcessStep> selectApiProcessStep(apiProcessStep apistep);
 
     /**
-     * 自动将指定response中字段value值替换指定request中字段value值（支持大部分产品json格式接口自动化测试）
+     * 自动将指定response中字段value值替换指定request中字段value值（支持大部分公司产品json格式接口自动化测试）
      * @param param
      * @return
      */
