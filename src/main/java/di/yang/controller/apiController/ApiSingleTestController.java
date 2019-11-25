@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/singleApi")
-public class apiSingleTestController extends BaseController {
+public class ApiSingleTestController extends BaseController {
     @Autowired
     private apiSingleTestService apiservice;
 

@@ -28,7 +28,6 @@
                 apitester=#{apitester},</if>
             <if test="apitestresult != null and '' !=apitestresult">
                 apitestresult=#{apitestresult},</if>
-
         </trim>
         WHERE id = #{id} AND productId = #{productId}
     </update>
