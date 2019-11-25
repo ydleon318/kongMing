@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import di.yang.Dao.impl.apiImpl.ApiProcessStepDaoImpl;
 import di.yang.module.api.apiProcessStep;
+import di.yang.service.impl.api.ApiProcessStepServiceImpl;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.testng.annotations.Test;
 
@@ -15,6 +16,7 @@ public class ResponseJsonDemo {
     private String str = "{\"data\":{\"step1\":\"one\",\"step2\":{\"NO01\":2}},\"data2\":\"step2\"}";
     private String str2 = "{\"data\":\"true\",\"status\":0}";
     private String str3 = "{\"status\":1}";
+    private ApiProcessStepServiceImpl apiProcessStepService = new ApiProcessStepServiceImpl();
 
     @Test
     public void test01(){
@@ -68,5 +70,12 @@ public class ResponseJsonDemo {
         ApiProcessStepDaoImpl dao = new ApiProcessStepDaoImpl();
         List<apiProcessStep> apistep = dao.selectApiProcessStepByProductId(2);
         System.out.printf(String.valueOf(apistep.size()));
+    }
+
+    @Test
+    public void test05(){
+        String str = "{\"apitestId\":2,\"apistep\":2,\"requestReplaceStep\":2,\"responseReplaceStep\":1}";
+        JSONObject json = JSON.parseObject(str);
+        System.out.printf(String.valueOf(apiProcessStepService.autoReplaceValue(json)));
     }
 }

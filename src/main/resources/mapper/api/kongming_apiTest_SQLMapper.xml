@@ -26,6 +26,28 @@
                 apitestdesc=#{apitestdesc},</if>
             <if test="apitester != null and '' !=apitester">
                 apitester=#{apitester},</if>
+            <if test="apiresponse != null and '' !=apiresponse">
+                apiresponse=#{apiresponse},</if>
+            <if test="apistatus != null and '' !=apistatus">
+                apistatus=#{apistatus},</if>
+            <if test="isreplace != null and '' !=isreplace">
+                isreplace=#{isreplace},</if>
+            <if test="requestLevel != null and '' !=requestLevel">
+                request_level=#{requestLevel},</if>
+            <if test="reponseLevel != null and '' !=reponseLevel">
+                reponse_level=#{reponseLevel},</if>
+            <if test="requestKey1 != null and '' !=requestKey1">
+                request_key1=#{requestKey1},</if>
+            <if test="requestKey2 != null and '' !=requestKey2">
+                request_key2=#{requestKey2},</if>
+            <if test="requestKey3 != null and '' !=requestKey3">
+                request_key3=#{requestKey3},</if>
+            <if test="reponseKey1 != null and '' !=reponseKey1">
+                reponse_key1=#{reponseKey1},</if>
+            <if test="reponseKey2 != null and '' !=reponseKey2">
+                reponse_key2=#{reponseKey2},</if>
+            <if test="reponseKey3 != null and '' !=reponseKey3">
+                reponse_key3=#{reponseKey3},</if>
         </trim>
         WHERE id = #{id} AND productId = #{productId}
     </update>
@@ -143,8 +165,9 @@
             </if>
         </trim>
     </select>
+    
 
-    <select id="selectApiProcessStepByProductId" parameterType="Integer" resultType="di.yang.module.api.apiProcessStep">
+    <select id="selectApiProcessStepByProductId" parameterType="Integer" resultMap="ApiProcessStepMap">
       SELECT * from api_process_step where apitestId = #{apitestId} ORDER BY apistep
     </select>
 
