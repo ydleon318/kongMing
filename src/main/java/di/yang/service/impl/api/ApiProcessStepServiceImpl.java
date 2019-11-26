@@ -7,11 +7,13 @@ import di.yang.Dao.impl.apiImpl.ApiProcessStepDaoImpl;
 import di.yang.VO.AutoReplaceValueVo;
 import di.yang.module.api.apiProcessStep;
 import di.yang.service.apiService.ApiProcessStepService;
+import di.yang.utils.BetterHttpClient;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,12 @@ import java.util.Map;
 @Service
 @Repository
 public class ApiProcessStepServiceImpl implements ApiProcessStepService {
+
+    @Autowired
+    private BetterHttpClient httpClient;
+
+    @Autowired
+    private apiProcessStep apiprocessstep;
 
     @Autowired
     private ApiProcessStepDao apiProcessStepDao;
@@ -249,6 +257,28 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                     Tools.error("整体数据错误");
             }
         return flag;
+    }
+
+    public Object executeApiProcessSteps(JSONObject param) throws IOException {
+        List<apiProcessStep> apistep = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
+        for (int i = 0;i<apistep.size();i++){
+            if (param.getString("isreplace").equals("Y")){
+                autoReplaceValue(param.getJSONObject("autoReplaceValue"));
+            }
+            if (apistep.get(i).getApimethod().equals("GET")){
+                httpClient.doGet(apistep.get(i).getApiurl());
+                if (httpClient.codeStuts==200&&httpClient.responseStr.equals(apistep.get(i).getApiresult())){
+                    apiprocessstep.setId(apistep.get(i).getId());
+                    apiprocessstep.setApitestId(apistep.get(i).getApitestId());
+                    apiprocessstep.setApistatus(1);
+                    apiprocessstep.setApiresponse(httpClient.responseStr);
+                    apiProcessStepDao.updataApiProcessStep(apiprocessstep);
+                    Tools.step("testcase NO "+apistep.get(i).getId()+" is PASS");
+                }
+            }
+
+        }
+        return null;
     }
 
 }
