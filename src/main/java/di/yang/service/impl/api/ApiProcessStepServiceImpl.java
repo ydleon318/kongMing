@@ -7,6 +7,7 @@ import di.yang.Dao.impl.apiImpl.ApiProcessStepDaoImpl;
 import di.yang.VO.AutoReplaceValueVo;
 import di.yang.module.api.apiProcessStep;
 import di.yang.service.apiService.ApiProcessStepService;
+import di.yang.service.bugService.BugManageService;
 import di.yang.utils.BetterHttpClient;
 import di.yang.utils.Tools;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
 
     @Autowired
     private ApiProcessStepDao apiProcessStepDao;
+
+    @Autowired
+    private BugManageService bugManageService;
 
     @Override
     public boolean addApiProcessStep(apiProcessStep apistep) {
@@ -262,8 +266,11 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
     public Object executeApiProcessSteps(JSONObject param) throws IOException {
         List<apiProcessStep> apistep = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
         for (int i = 0;i<apistep.size();i++){
-            if (param.getString("isreplace").equals("Y")){
+            if (param.getString("isreplace").equals("Y")&&apistep.get(param.getJSONObject("autoReplaceValue").getInteger("responseReplaceStep")-1).getApistatus()==1){
                 autoReplaceValue(param.getJSONObject("autoReplaceValue"));
+            }else {
+                Tools.error("需要替换的response用例执行failed，无法替换，case： "+apistep.get(i).getId()+" 不执行");
+                continue;
             }
             if (apistep.get(i).getApimethod().equals("GET")){
                 httpClient.doGet(apistep.get(i).getApiurl());
@@ -273,11 +280,45 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                     apiprocessstep.setApistatus(1);
                     apiprocessstep.setApiresponse(httpClient.responseStr);
                     apiProcessStepDao.updataApiProcessStep(apiprocessstep);
-                    Tools.step("testcase NO "+apistep.get(i).getId()+" is PASS");
+                    Tools.step("case："+apistep.get(i).getId()+" is PASS");
+                }else {
+                    apiprocessstep.setId(apistep.get(i).getId());
+                    apiprocessstep.setApitestId(apistep.get(i).getApitestId());
+                    apiprocessstep.setApistatus(0);
+                    apiprocessstep.setApiresponse(httpClient.responseStr);
+                    apiProcessStepDao.updataApiProcessStep(apiprocessstep);
+                    Tools.step("case： "+apistep.get(i).getId()+" is FAILED");
+                    bugManageService.addBug(apistep.get(i).getApiname(),apistep.get(i).getApiparamvalue(),apistep.get(i).getApiresult()
+                            ,httpClient.responseStr,4,"杨迪","孟丹",apistep.get(i).getApitestId());
                 }
+            }else if (apistep.get(i).getApimethod().equals("POST")){
+                httpClient.doPostWithJson(apistep.get(i).getApiurl(),apistep.get(i).getApiparamvalue());
+                if (httpClient.codeStuts==200&&httpClient.responseStr.equals(apistep.get(i).getApiresult())){
+                    apiprocessstep.setId(apistep.get(i).getId());
+                    apiprocessstep.setApitestId(apistep.get(i).getApitestId());
+                    apiprocessstep.setApistatus(1);
+                    apiprocessstep.setApiresponse(httpClient.responseStr);
+                    apiProcessStepDao.updataApiProcessStep(apiprocessstep);
+                    Tools.step("case："+apistep.get(i).getId()+" is PASS");
+                }else {
+                    apiprocessstep.setId(apistep.get(i).getId());
+                    apiprocessstep.setApitestId(apistep.get(i).getApitestId());
+                    apiprocessstep.setApistatus(0);
+                    apiprocessstep.setApiresponse(httpClient.responseStr);
+                    apiProcessStepDao.updataApiProcessStep(apiprocessstep);
+                    Tools.step("case： "+apistep.get(i).getId()+" is FAILED");
+                    bugManageService.addBug(apistep.get(i).getApiname(),apistep.get(i).getApiparamvalue(),apistep.get(i).getApiresult()
+                            ,httpClient.responseStr,4,"杨迪","孟丹",apistep.get(i).getApitestId());
+                }
+            }else {
+                Tools.error("需传入正确的请求类型");
+                continue;
             }
-
         }
+
+        //还差回写apiprocesstest库动作
+        List<apiProcessStep> status = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
+
         return null;
     }
 
