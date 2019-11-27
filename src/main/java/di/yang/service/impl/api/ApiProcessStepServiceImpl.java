@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -264,6 +265,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
     }
 
     public Object executeApiProcessSteps(JSONObject param) throws IOException {
+//        boolean apiProcessispass = false;
         List<apiProcessStep> apistep = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
         for (int i = 0;i<apistep.size();i++){
             if (param.getString("isreplace").equals("Y")&&apistep.get(param.getJSONObject("autoReplaceValue").getInteger("responseReplaceStep")-1).getApistatus()==1){
@@ -318,6 +320,17 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
 
         //还差回写apiprocesstest库动作
         List<apiProcessStep> status = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
+        List<Integer> statuslist = new ArrayList<Integer>();
+        for (int i = 0;i<status.size();i++){
+            statuslist.add(status.get(i).getApistatus());
+        }
+        for (int j=0;j<statuslist.size();j++){
+            if (statuslist.get(j)==1){
+                continue;
+            }else {
+                break;
+            }
+        }
 
         return null;
     }
