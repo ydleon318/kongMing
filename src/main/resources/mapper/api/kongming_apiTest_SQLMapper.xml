@@ -6,8 +6,8 @@
 
     <!--添加接口业务流程测试产品数据-->
     <insert id="addApiProcessTest" parameterType="di.yang.module.api.apiProcessTest">
-        INSERT INTO api_process_test (id,apitestname,apitestdesc,apitester,createTime,productId)
-        VALUES (#{id},#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
+        INSERT INTO api_process_test (apitestname,apitestdesc,apitester,createTime,productId)
+        VALUES (#{apitestname},#{apitestdesc},#{apitester},NOW(),#{productId})
     </insert>
 
     <!--添加接口业务流程测试步骤用例-->
