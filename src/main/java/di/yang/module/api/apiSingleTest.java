@@ -21,4 +21,5 @@ public class apiSingleTest {
     private int apistatus;
     private Date createTime;
     private int productId;
+    private String delflag;
 }

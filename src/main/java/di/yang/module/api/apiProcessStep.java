@@ -28,4 +28,5 @@ public class apiProcessStep {
     private String reponseKey1;
     private String reponseKey2;
     private String reponseKey3;
+    private String delflag;
 }

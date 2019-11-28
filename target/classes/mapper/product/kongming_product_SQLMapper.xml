@@ -5,8 +5,8 @@
 <mapper namespace="di.yang.module.product">
     <!--产品列表-->
     <insert id="addProductInfo" parameterType="di.yang.module.product.Product">
-        INSERT INTO product_product (productname,productdesc,producter,create_time)
-        VALUES (#{productname},#{productdesc},#{producter},NOW());
+        INSERT INTO product_product (productname,productdesc,producter,createTime,delflag)
+        VALUES (#{productname},#{productdesc},#{producter},NOW(),#{delflag});
 
     </insert>
     <update id="updataProudctData" parameterType="di.yang.module.product.Product">
@@ -16,6 +16,8 @@
                 productname=#{productname},</if>
             <if test="productdesc != null and '' !=productdesc">
                 productdesc=#{productdesc},</if>
+            <if test="delflag != null and '' !=delflag">
+                delflag=#{delflag},</if>
             <if test="producter != null and '' !=producter">
                 producter=#{producter},</if>
         </trim>
@@ -34,7 +36,10 @@
                 AND producter like '%${producter}%'
             </if>
             <if test="null != createTime and '' !=createTime">
-                AND create_time like '%${createTime}%'
+                AND createTime like '%${createTime}%'
+            </if>
+            <if test="null != delflag and '' !=delflag">
+                AND delflag like '%${delflag}%'
             </if>
         </trim>
     </select>

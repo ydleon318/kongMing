@@ -16,4 +16,5 @@ public class apiProcessTest {
     private int apitestresult;
     private Date createTime;
     private int productId;
+    private String delflag;
 }

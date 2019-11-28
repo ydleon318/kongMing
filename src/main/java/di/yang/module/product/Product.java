@@ -10,4 +10,5 @@ public class Product {
     private String productdesc;
     private String producter;
     private Date createTime;
+    private String delflag;
 }

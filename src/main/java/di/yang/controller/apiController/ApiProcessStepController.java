@@ -64,4 +64,17 @@ public class ApiProcessStepController extends BaseController {
         return reponse;
     }
 
+    @PostMapping(value = "/executeApiProcessSteps")
+    public ResponseEntity<?> executeApiProcessSteps(@RequestBody JSONObject param){
+        ResponseEntity<?> result = null;
+        Tools.step("executeApiProcessSteps param is--->"+param);
+        boolean flag = apiProcessStepService.executeApiProcessSteps(param);
+        if (flag){
+            result = buildSuccessResponse(flag);
+        }else {
+            result = buildErrorResponse(flag);
+        }
+        return  result;
+    }
+
 }

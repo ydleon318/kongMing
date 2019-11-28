@@ -24,8 +24,8 @@ public class ApiSingleTestController extends BaseController {
     public ResponseEntity<?> addApiSingleCase(@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
         Tools.step("addApiSingleCase param is--->"+param);
-        apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
-        boolean flag = apiservice.addApiSingle(apiSingleTest);
+        apiSingleTest apisingletest = JSON.toJavaObject(param, apiSingleTest.class);
+        boolean flag = apiservice.addApiSingle(apisingletest);
         if (flag){
             result = buildSuccessResponse(flag);
         }else {
@@ -39,8 +39,8 @@ public class ApiSingleTestController extends BaseController {
     public ResponseEntity<?> updataApiSingleTestCase (@RequestBody JSONObject param){
         ResponseEntity<?> result = null;
         Tools.step("updataApiSingleTestCase param is--->"+param);
-        apiSingleTest apiSingleTest = JSON.toJavaObject(param, apiSingleTest.class);
-        boolean flag = apiservice.updataApiSingleTest(apiSingleTest);
+        apiSingleTest apisingletest = JSON.toJavaObject(param, apiSingleTest.class);
+        boolean flag = apiservice.updataApiSingleTest(apisingletest);
         if (flag){
             result = buildSuccessResponse(flag);
         }else {
