@@ -273,8 +273,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
     /**
      * 执行接口业务流程测试用例
      * @param param {"apitestId":2,"isreplace":"Y","apiprocesstestId":1,"autoReplaceValue":{"apitestId":2,"responseReplaceStep":1,"requestReplaceStep":2,"apistep":2}}
-     * @return
-     * @throws IOException
+     * @return boolean
      */
     public boolean executeApiProcessSteps(JSONObject param){
         boolean flag = false;

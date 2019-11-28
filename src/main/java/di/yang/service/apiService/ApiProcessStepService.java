@@ -33,4 +33,11 @@ public interface ApiProcessStepService {
      * @return
      */
     boolean autoReplaceValue (JSONObject param);
+
+    /**
+     * 执行接口业务流程测试用例
+     * @param param {"apitestId":2,"isreplace":"Y","apiprocesstestId":1,"autoReplaceValue":{"apitestId":2,"responseReplaceStep":1,"requestReplaceStep":2,"apistep":2}}
+     * @return boolean
+     */
+    boolean executeApiProcessSteps (JSONObject param);
 }
