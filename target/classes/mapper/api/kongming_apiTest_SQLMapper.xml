@@ -106,6 +106,7 @@
                 AND productId=#{productId}
             </if>
         </trim>
+        limit #{pagesize} offset #{pagenum}
     </select>
 
     <!--apiProcessStep类resultMap-->
@@ -175,6 +176,7 @@
                 AND reponse_level=#{reponseLevel}
             </if>
         </trim>
+        limit #{pagesize} offset #{pagenum}
     </select>
 
     <!--通过产品编号查询api业务流程测试步骤-->
@@ -246,6 +248,7 @@
                 AND delflag=#{delflag}
             </if>
         </trim>
+        limit #{pagesize} offset #{pagenum}
     </select>
 
 </mapper>

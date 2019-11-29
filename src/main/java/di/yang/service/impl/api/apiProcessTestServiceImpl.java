@@ -30,7 +30,7 @@ public class apiProcessTestServiceImpl implements apiProcessTestService {
 
     @Override
     public List<apiProcessTest> selectApiProcessTest(apiProcessTest apiprocesstest) {
-        List<apiProcessTest> lists = apiprocesstestDao.selectApiProcessTestInfo(apiprocesstest);
-        return lists;
+        apiprocesstest.setPagenum((apiprocesstest.getPagenum()-1)*apiprocesstest.getPagesize());
+        return apiprocesstestDao.selectApiProcessTestInfo(apiprocesstest);
     }
 }

@@ -70,8 +70,8 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
 
     @Override
     public List<apiProcessStep> selectApiProcessStep(apiProcessStep apistep) {
-        List<apiProcessStep> lists = apiProcessStepDao.selectApiProcessStepInfo(apistep);
-        return lists;
+        apistep.setPagenum((apistep.getPagenum()-1)*apistep.getPagesize());
+        return apiProcessStepDao.selectApiProcessStepInfo(apistep);
     }
 
     /**

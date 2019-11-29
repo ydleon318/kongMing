@@ -45,7 +45,7 @@ public class ApiProcessTestController extends BaseController {
         }else {
             result = buildErrorResponse(data);
         }
-        return  result;
+        return result;
     }
 
     @PostMapping(value = "/selectApiProcessTestInfo")

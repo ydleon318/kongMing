@@ -31,6 +31,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> selectProudctData(Product product) {
+        product.setPagenum((product.getPagenum()-1)*product.getPagesize());
         return productDao.selectProudctData(product);
     }
 }

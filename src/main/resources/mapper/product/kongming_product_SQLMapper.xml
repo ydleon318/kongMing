@@ -42,6 +42,7 @@
                 AND delflag like '%${delflag}%'
             </if>
         </trim>
+        limit #{pagesize} offset #{pagenum}
     </select>
 
 

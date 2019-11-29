@@ -46,8 +46,8 @@
             <if test="null != productId and '' !=productId">
                 AND productId =#{productId}
             </if>
-
         </trim>
+        limit #{pagesize} offset #{pagenum}
     </select>
 
 

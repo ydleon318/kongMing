@@ -43,9 +43,9 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
     }
 
     @Override
-    public List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle) {
-        List<apiSingleTest> api = apisingleDao.getApiSingleTestInfo(apiSingle);
-        return api;
+    public List<apiSingleTest> getApiSingleTestInfo(apiSingleTest apiSingle){
+        apiSingle.setPagenum((apiSingle.getPagenum()-1)*apiSingle.getPagesize());
+        return apisingleDao.getApiSingleTestInfo(apiSingle);
     }
 
     /**

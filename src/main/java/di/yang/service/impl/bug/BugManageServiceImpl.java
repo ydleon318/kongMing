@@ -40,7 +40,7 @@ public class BugManageServiceImpl implements BugManageService {
 
     @Override
     public List<BugManagement> selectbugs(BugManagement bugManagement) {
-        List<BugManagement> bugs = bugmanage.selectBugs(bugManagement);
-        return bugs;
+        bugManagement.setPagenum((bugManagement.getPagenum()-1)*bugManagement.getPagesize());
+        return bugmanage.selectBugs(bugManagement);
     }
 }

@@ -1,5 +1,6 @@
 package di.yang.module.api;
 
+import di.yang.module.PageSet;
 import lombok.Data;
 import org.springframework.stereotype.Repository;
 
@@ -7,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Repository
-public class apiProcessStep {
+public class apiProcessStep extends PageSet {
     private int id;
     private String apiname;
     private String apiurl;
