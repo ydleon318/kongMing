@@ -21,6 +21,7 @@ public class apiProcessStep extends PageSet {
     private Date createTime;
     private int apitestId;
     private String isreplace;
+    private int responseReplaceStep;
     private int requestLevel;
     private int reponseLevel;
     private String requestKey1;

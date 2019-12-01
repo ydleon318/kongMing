@@ -36,6 +36,11 @@ public class ApiProcessStepDaoImpl extends BaseGetData implements ApiProcessStep
     }
 
     @Override
+    public apiProcessStep selectApiProcessStepByApistep(apiProcessStep apiProcessStep) {
+        return getDataBaseInfo(dataBasexml,"selectApiProcessStepByApistep",apiProcessStep);
+    }
+
+    @Override
     public boolean updataApiProcessStepRequest(AutoReplaceValueVo replaceValueVo) {
         return upDataBaseInfo(dataBasexml,"updataApiProcessStepRequest",replaceValueVo);
     }

@@ -35,6 +35,8 @@ public interface ApiProcessStepDao {
      */
     List<apiProcessStep> selectApiProcessStepByProductId (@Param("apitestId") int apitestId);
 
+    apiProcessStep selectApiProcessStepByApistep (apiProcessStep apiProcessStep);
+
     /**
      * 自动替换请求参数值更新库
      * @param replaceValueVo

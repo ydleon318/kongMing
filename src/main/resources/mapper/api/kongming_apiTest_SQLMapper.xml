@@ -12,8 +12,8 @@
 
     <!--添加接口业务流程测试步骤用例-->
     <insert id="addApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
-        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId,delflag)
-        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId},#{delflag})
+        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId,delflag,responseReplaceStep)
+        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId},#{delflag},#{responseReplaceStep})
     </insert>
 
     <!--更新接口业务流程测试产品数据-->
@@ -56,6 +56,8 @@
                 apistatus=#{apistatus},</if>
             <if test="isreplace != null and '' !=isreplace">
                 isreplace=#{isreplace},</if>
+            <if test="responseReplaceStep != null and '' !=responseReplaceStep">
+                responseReplaceStep=#{responseReplaceStep},</if>
             <if test="requestLevel != null and '' !=requestLevel">
                 request_level=#{requestLevel},</if>
             <if test="reponseLevel != null and '' !=reponseLevel">
@@ -123,6 +125,7 @@
         <result property="createTime" column="createTime"/>
         <result property="apitestId" column="apitestId"/>
         <result property="isreplace" column="isreplace"/>
+        <result property="responseReplaceStep" column="responseReplaceStep"/>
         <result property="requestLevel" column="request_level"/>
         <result property="reponseLevel" column="reponse_level"/>
         <result property="requestKey1" column="request_key1"/>
@@ -175,6 +178,9 @@
             <if test="null != reponseLevel and '' !=reponseLevel">
                 AND reponse_level=#{reponseLevel}
             </if>
+            <if test="null != responseReplaceStep and '' !=responseReplaceStep">
+                AND responseReplaceStep=#{responseReplaceStep}
+            </if>
         </trim>
         limit #{pagesize} offset #{pagenum}
     </select>
@@ -182,6 +188,10 @@
     <!--通过产品编号查询api业务流程测试步骤-->
     <select id="selectApiProcessStepByProductId" parameterType="Integer" resultMap="ApiProcessStepMap">
       SELECT * from api_process_step where apitestId = #{apitestId} ORDER BY apistep
+    </select>
+
+    <select id="selectApiProcessStepByApistep" parameterType="Integer" resultMap="ApiProcessStepMap">
+        SELECT * from api_process_step where apitestId = #{apitestId} and apistep = #{apistep}
     </select>
 
     <!--增加单一接口测试用例-->
