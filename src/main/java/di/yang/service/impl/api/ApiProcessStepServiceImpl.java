@@ -2,6 +2,7 @@ package di.yang.service.impl.api;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.redis.E;
 import di.yang.Dao.api.ApiProcessStepDao;
 import di.yang.Dao.api.apiProcessTestDao;
 import di.yang.Dao.impl.apiImpl.ApiProcessStepDaoImpl;
@@ -77,7 +78,11 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object responseLevelOne(String response,Object key){
-        return  JSON.parseObject(response).get(key);
+        try{
+            return  JSON.parseObject(response).get(key);
+        }catch (Exception e){
+            return "数据错误";
+        }
     }
 
     /**
@@ -88,7 +93,11 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object responseLevelTwo(String response,String key1,Object key2){
-        return JSON.parseObject(response).getJSONObject(key1).get(key2);
+        try{
+            return JSON.parseObject(response).getJSONObject(key1).get(key2);
+        }catch (Exception e){
+            return "数据错误";
+        }
     }
 
     /**
@@ -100,7 +109,11 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object responseLevelThree(String response,String key1,String key2,Object key3){
-        return JSON.parseObject(response).getJSONObject(key1).getJSONObject(key2).get(key3);
+        try{
+            return JSON.parseObject(response).getJSONObject(key1).getJSONObject(key2).get(key3);
+        }catch (Exception e){
+            return "数据错误";
+        }
     }
 
     /**
@@ -111,9 +124,13 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object requestLevelOne(String request,String key,Object value){
-        Map<String, Object> requestMap= JSON.parseObject(request, HashMap.class);
-        requestMap.put(key,value);
-        return new JSONObject(requestMap);
+       try {
+           Map<String, Object> requestMap = JSON.parseObject(request, HashMap.class);
+           requestMap.put(key, value);
+           return new JSONObject(requestMap);
+       }catch (Exception e){
+           return "数据错误";
+       }
     }
 
     /**
@@ -125,11 +142,16 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object requestLevelTwo(String request,String key1,String key2,Object value){
-        Map<String, Object> requestMap= JSON.parseObject(request, HashMap.class);
-        Map<String, Object> key1Map=JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
-        key1Map.put(key2,value);
-        requestMap.put(key1,String.valueOf(new JSONObject(key1Map)));
-        return new JSONObject(requestMap).toJSONString().replace("\\","");
+        try {
+            Map<String, Object> requestMap = JSON.parseObject(request, HashMap.class);
+            Map<String, Object> key1Map = JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
+            key1Map.put(key2, value);
+            requestMap.put(key1, String.valueOf(new JSONObject(key1Map)));
+            return new JSONObject(requestMap).toJSONString().replace("\\", "");
+        }catch (Exception e){
+            e.printStackTrace();
+            return "数据错误";
+        }
     }
 
     /**
@@ -142,13 +164,19 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
      * @return
      */
     public Object requestLevelThree(String request,String key1,String key2,String key3,Object value){
-        Map<String, Object> requestMap= JSON.parseObject(request, HashMap.class);
-        Map<String, Object> key1Map=JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
-        Map<String, Object> key2Map=JSON.parseObject(String.valueOf(key1Map.get(key2)), HashMap.class);
-        key2Map.put(key3,value);
-        key1Map.put(key2,String.valueOf(new JSONObject(key2Map)));
-        requestMap.put(key1,String.valueOf(new JSONObject(key1Map)));
-        return new JSONObject(requestMap).toJSONString().replace("\\","");
+       try {
+           Map<String, Object> requestMap = JSON.parseObject(request, HashMap.class);
+           Map<String, Object> key1Map = JSON.parseObject(String.valueOf(requestMap.get(key1)), HashMap.class);
+           Map<String, Object> key2Map = JSON.parseObject(String.valueOf(key1Map.get(key2)), HashMap.class);
+           key2Map.put(key3, value);
+           key1Map.put(key2, String.valueOf(new JSONObject(key2Map)));
+           requestMap.put(key1, String.valueOf(new JSONObject(key1Map)));
+           return new JSONObject(requestMap).toJSONString().replace("\\","");
+       }catch (Exception e){
+           e.printStackTrace();
+           return "数据错误";
+       }
+
     }
 
     /**

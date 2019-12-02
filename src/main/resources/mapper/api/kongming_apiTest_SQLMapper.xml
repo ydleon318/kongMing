@@ -196,8 +196,8 @@
 
     <!--增加单一接口测试用例-->
     <insert id="addApiSingleTest" parameterType="di.yang.module.api.apiSingleTest">
-        INSERT INTO api_single_test (apiname,apiurl,apiparamvalue,apimethod,createTime,productId,delflag)
-        VALUES (#{apiname},#{apiurl},#{apiparamvalue},#{apimethod},NOW(),#{productId},#{delflag})
+        INSERT INTO api_single_test (apiname,apiurl,apiparamvalue,apimethod,apiresult,createTime,productId,delflag)
+        VALUES (#{apiname},#{apiurl},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{productId},#{delflag})
     </insert>
 
     <!--更新单一接口测试用例-->
@@ -210,6 +210,8 @@
                 apiurl=#{apiurl},</if>
             <if test="apiparamvalue != null and '' !=apiparamvalue">
                 apiparamvalue=#{apiparamvalue},</if>
+            <if test="apiresult != null and '' !=apiresult">
+                apiresult=#{apiresult},</if>
             <if test="apimethod != null and '' !=apimethod">
                 apimethod=#{apimethod},</if>
             <if test="delflag != null and '' !=delflag">

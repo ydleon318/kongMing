@@ -31,6 +31,7 @@ public class ApiProcessTestController extends BaseController {
         }else {
             result = buildErrorResponse(data);
         }
+        Tools.step("addApiProcessTestResponse is----->"+result);
         return result;
     }
 
@@ -45,6 +46,7 @@ public class ApiProcessTestController extends BaseController {
         }else {
             result = buildErrorResponse(data);
         }
+        Tools.step("updataApiProcessTestResponse is----->"+result);
         return result;
     }
 
