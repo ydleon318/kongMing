@@ -27,8 +27,6 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
     @Autowired
     private BugManageService bugManageService;
 
-    @Autowired
-    private apiSingleTest apisingletest;
 
     @Override
     public boolean addApiSingle(apiSingleTest apiSingle) {
@@ -59,45 +57,51 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
             JSONArray jsonArray = JSON.parseArray(jsonObject.getJSONArray("data").toString());
             for (Object obj : jsonArray) {
                 JSONObject param = (JSONObject) obj;
-                switch (param.getString("apimethod")) {
+                apiSingleTest apisingletest = new apiSingleTest();
+                apisingletest = apisingleDao.selectApiSingleTestByid(param.getInteger("id"));
+                switch (apisingletest.getApimethod()) {
                     case "GET":
-                        httpClient.doGet(param.getString("apiurl"));
-                        if (httpClient.responseStr.contains(param.getString("apiresult")) && httpClient.codeStuts==200) {
-                            apisingletest.setId(param.getInteger("id"));
-                            apisingletest.setProductId(param.getInteger("productId"));
-                            apisingletest.setApistatus(1);
-                            apisingletest.setApiresponse(httpClient.responseStr);
-                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                        httpClient.doGet(apisingletest.getApiurl());
+                        if (httpClient.responseStr.contains(apisingletest.getApiresult()) && httpClient.codeStuts==200) {
+                            apiSingleTest api = new apiSingleTest();
+                            api.setId(param.getInteger("id"));
+                            api.setProductId(apisingletest.getProductId());
+                            api.setApistatus(1);
+                            api.setApiresponse(httpClient.responseStr);
+                            apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is PASS");
                         } else {
-                            apisingletest.setId(param.getInteger("id"));
-                            apisingletest.setProductId(param.getInteger("productId"));
-                            apisingletest.setApistatus(0);
-                            apisingletest.setApiresponse(httpClient.responseStr);
-                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            apiSingleTest api = new apiSingleTest();
+                            api.setId(param.getInteger("id"));
+                            api.setProductId(apisingletest.getProductId());
+                            api.setApistatus(0);
+                            api.setApiresponse(httpClient.responseStr);
+                            apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is FAILED");
-                            bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
-                            ,httpClient.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
+                            bugManageService.addBug(apisingletest.getApiname(),apisingletest.getApiparamvalue(),apisingletest.getApiresult()
+                            ,httpClient.responseStr,4,"杨迪","孟丹",apisingletest.getProductId());
                         }
                         break;
                     case "POST":
-                        httpClient.doPostWithJson(param.getString("apiurl"),param.getString("apiparamvalue"));
-                        if (httpClient.responseStr.contains(param.getString("apiresult")) && httpClient.codeStuts==200) {
-                            apisingletest.setId(param.getInteger("id"));
-                            apisingletest.setProductId(param.getInteger("productId"));
-                            apisingletest.setApistatus(1);
-                            apisingletest.setApiresponse(httpClient.responseStr);
-                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                        httpClient.doPostWithJson(apisingletest.getApiurl(),apisingletest.getApiparamvalue());
+                        if (httpClient.responseStr.contains(apisingletest.getApiresult()) && httpClient.codeStuts==200) {
+                            apiSingleTest api = new apiSingleTest();
+                            api.setId(param.getInteger("id"));
+                            api.setProductId(apisingletest.getProductId());
+                            api.setApistatus(1);
+                            api.setApiresponse(httpClient.responseStr);
+                            apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is PASS");
                         } else {
-                            apisingletest.setId(param.getInteger("id"));
-                            apisingletest.setProductId(param.getInteger("productId"));
-                            apisingletest.setApistatus(0);
-                            apisingletest.setApiresponse(httpClient.responseStr);
-                            apisingleDao.updataApiSingleTestResult(apisingletest);
+                            apiSingleTest api = new apiSingleTest();
+                            api.setId(param.getInteger("id"));
+                            api.setProductId(apisingletest.getProductId());
+                            api.setApistatus(0);
+                            api.setApiresponse(httpClient.responseStr);
+                            apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is FAILED");
-                            bugManageService.addBug(param.getString("apiname"),param.getString("apiparamvalue"),param.getString("apiresult")
-                                    ,httpClient.responseStr,4,"杨迪","孟丹",param.getInteger("productId"));
+                            bugManageService.addBug(apisingletest.getApiname(),apisingletest.getApiparamvalue(),apisingletest.getApiresult()
+                                    ,httpClient.responseStr,4,"杨迪","孟丹",apisingletest.getProductId());
                         }
                         break;
                     default:

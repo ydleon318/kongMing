@@ -262,5 +262,9 @@
         </trim>
         limit #{pagesize} offset #{pagenum}
     </select>
+    <!--通过用例编号查找单一接口测试用例-->
+    <select id="selectApiSingleTestByid" parameterType="Integer" resultType="di.yang.module.api.apiSingleTest">
+        SELECT * FROM api_single_test where id = #{id}
+    </select>
 
 </mapper>
