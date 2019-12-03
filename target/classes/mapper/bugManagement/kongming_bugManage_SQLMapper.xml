@@ -13,10 +13,28 @@
         <trim prefix="set" suffixOverrides=",">
             <if test="bugstatus != null and '' !=bugstatus">
                 bugstatus=#{bugstatus},</if>
+            <if test="buglevel != null and '' !=buglevel">
+                buglevel=#{buglevel},</if>
+            <if test="bugcreater != null and '' !=bugcreater">
+                bugcreater=#{bugcreater},</if>
+            <if test="bugassign != null and '' !=bugassign">
+                bugassign=#{bugassign},</if>
         </trim>
         WHERE id = #{id} AND productId = #{productId}
     </update>
-    <select id="selectBugData" parameterType="di.yang.module.bugManagement.BugManagement" resultType="di.yang.module.bugManagement.BugManagement">
+    <resultMap id="BugManagementMap" type="di.yang.module.bugManagement.BugManagement">
+        <id property="id" column="id"/>
+        <result property="bugname" column="bugname"/>
+        <result property="bugdetail" column="bugdetail"/>
+        <result property="bugstatus" column="bugstatus"/>
+        <result property="buglevel" column="buglevel"/>
+        <result property="bugcreater" column="bugcreater"/>
+        <result property="bugassign" column="bugassign"/>
+        <result property="apiresponse" column="apiresponse"/>
+        <result property="createTime" column="createTime"/>
+        <result property="productId" column="productId"/>
+    </resultMap>
+    <select id="selectBugData" parameterType="di.yang.module.bugManagement.BugManagement" resultMap="BugManagementMap">
         select * from bug_management
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != id and '' !=id">
