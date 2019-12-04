@@ -12,8 +12,8 @@
 
     <!--添加接口业务流程测试步骤用例-->
     <insert id="addApiProcessStep" parameterType="di.yang.module.api.apiProcessStep">
-        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId,delflag,responseReplaceStep)
-        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId},#{delflag},#{responseReplaceStep})
+        INSERT INTO api_process_step (apiname,apiurl,apistep,apiparamvalue,apimethod,apiresult,createTime,apitestId,delflag,isreplace)
+        VALUES (#{apiname},#{apiurl},#{apistep},#{apiparamvalue},#{apimethod},#{apiresult},NOW(),#{apitestId},#{delflag},#{isreplace})
     </insert>
 
     <!--更新接口业务流程测试产品数据-->
