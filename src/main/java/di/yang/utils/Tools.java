@@ -5,8 +5,9 @@ package di.yang.utils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.testng.Reporter;
 import java.io.File;
 import java.text.DateFormat;
@@ -17,14 +18,15 @@ import java.util.Date;
 
 public class Tools {
 	private static Date dd;
-	private static final Logger log = LoggerFactory.getLogger(Tools.class);
+    private static Logger log=Logger.getLogger(Tools.class);
+
 	/**
 	 * 记录小步骤
 	 * @param param
 	 */
 	public static void step(Object param){
 		String step = "step-->" + param;
-		log.info("step--> param = {}", param);
+		log.info("step--> param = "+param);
 		Reporter.log(step);
 	}
 

@@ -108,6 +108,29 @@ public class BetterHttpClient {
         httpClient.close();
     }
 
+    /**
+     * post请求，发送String参数，参数格式为xml
+     * @param url 请求url地址
+     * @param param 请求的xml参数
+     * @throws IOException
+     */
+    public void doPostWithXML(String url, String param) throws IOException {
+        System.out.printf(url);
+        HttpPost post =new HttpPost(url);
+        JSONObject jsonObject = null;
+        post.setHeader("content-type","text/xml");
+        StringEntity entity = new StringEntity(param,"utf-8");
+        post.setEntity(entity);
+        //执行post请求
+        response =httpClient.execute(post);
+        this.responseStr = EntityUtils.toString(response.getEntity());
+        this.codeStuts = getStatusCode();
+        System.out.println(codeStuts);
+        System.out.println(responseStr);
+        response.close();
+        httpClient.close();
+    }
+
 
 
 
