@@ -5,7 +5,10 @@ import lombok.Data;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
-
+/**
+ * @Author yangdi
+ * @Date 2019/11/4 13:20
+ **/
 @Data
 @Repository
 public class BugManagement extends PageSet {

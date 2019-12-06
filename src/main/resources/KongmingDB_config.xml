@@ -25,5 +25,6 @@
         <mapper resource="mapper/api/kongming_apiTest_SQLMapper.xml"/>
         <mapper resource="mapper/product/kongming_product_SQLMapper.xml"/>
         <mapper resource="mapper/bugManagement/kongming_bugManage_SQLMapper.xml"/>
+        <mapper resource="mapper/web/kongming_web_SQLMapper.xml"/>
     </mappers>
 </configuration>

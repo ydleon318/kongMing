@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="di.yang.module.web">
+    <resultMap id="webProcessTestMap" type="di.yang.module.web.webProcessTest">
+        <id property="id" column="id"/>
+        <result property="webcasename" column="webcasename"/>
+        <result property="webtestresult" column="webtestresult"/>
+        <result property="webtester" column="webtester"/>
+        <result property="createTime" column="create_time"/>
+        <result property="productId" column="product_id"/>
+        <result property="delflag" column="delflag"/>
+    </resultMap>
+
+    <!--添加web界面测试用例-->
+    <insert id="addWebProcessTestCase" parameterType="di.yang.module.web.webProcessTest">
+        INSERT INTO web_process_test (webcasename,webtester,create_time,product_id,delflag)
+        VALUES (#{webcasename},#{webtester},NOW(),#{productId},#{delflag})
+    </insert>
+    <!--编辑web界面测试用例-->
+    <update id="updataWebProcessTestCase" parameterType="di.yang.module.web.webProcessTest">
+        UPDATE web_process_test
+        <trim prefix="set" suffixOverrides=",">
+            <if test="webcasename != null and '' !=webcasename">
+                webcasename=#{webcasename},</if>
+            <if test="webtester != null and '' !=webtester">
+                webtester=#{webtester},</if>
+            <if test="webtestresult != null and '' !=webtestresult">
+                webtestresult=#{webtestresult},</if>
+            <if test="delflag != null and '' !=delflag">
+                delflag=#{delflag},</if>
+        </trim>
+        WHERE id = #{id}
+    </update>
+
+    <!--查询web界面测试用例-->
+    <select id="selectWebProcessTestCase" parameterType="di.yang.module.web.webProcessTest" resultMap="webProcessTestMap">
+        SELECT * FROM web_process_test
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null != id and '' !=id">
+                 AND id=#{id}
+            </if>
+            <if test="null != webcasename and '' !=webcasename">
+                 AND webcasename=#{webcasename}
+            </if>
+            <if test="null != webtestresult and '' !=webtestresult">
+                AND webtestresult=#{webtestresult}
+            </if>
+            <if test="null != webtester and '' !=webtester">
+                AND webtester=#{webtester}
+            </if>
+            <if test="null != createTime and '' !=createTime">
+                AND createTime=#{create_time}
+            </if>
+            <if test="null != productId and '' !=productId">
+                AND productId=#{product_id}
+            </if>
+        </trim>
+        limit #{pagesize} offset #{pagenum}
+    </select>
+
+
+
+
+
+</mapper>
