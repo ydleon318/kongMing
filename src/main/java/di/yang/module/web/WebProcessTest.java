@@ -11,7 +11,7 @@ import lombok.Data;
 public class WebProcessTest extends PageSet{
     private int id;
     private String webcasename;
-    private boolean webtestresult;
+    private String webtestresult;
     private String webtester;
     private String createTime;
     private String productId;

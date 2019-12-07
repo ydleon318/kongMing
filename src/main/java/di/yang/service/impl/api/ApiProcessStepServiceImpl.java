@@ -307,7 +307,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                 apiProcessStep newapistep = new apiProcessStep();
                 newapistep.setApistep(apistep.get(i).getResponseReplaceStep());
                 newapistep.setApitestId(param.getInteger("apitestId"));
-                if (apistep.get(i).getIsreplace().equals("Y") && apiProcessStepDao.selectApiProcessStepByApistep(newapistep).getApistatus() == 1) {
+                if (apistep.get(i).getIsreplace().equals("Y") && apiProcessStepDao.selectApiProcessStepByApistep(newapistep).getApistatus() .equals("1")) {
                     JSONObject object = new JSONObject();
                     object.put("apitestId",apistep.get(i).getApitestId());
                     object.put("requestReplaceStep",apistep.get(i).getApistep());
@@ -319,14 +319,14 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         if (httpClient.codeStuts == 200 && httpClient.responseStr.contains(apistep.get(i).getApiresult())) {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(1);
+                            apiprocessstep.setApistatus("1");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case：" + apistep.get(i).getId() + " is PASS");
                         } else {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(0);
+                            apiprocessstep.setApistatus("0");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case： " + apistep.get(i).getId() + " is FAILED");
@@ -338,14 +338,14 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         if (httpClient.codeStuts == 200 && httpClient.responseStr.contains(apistep.get(i).getApiresult())) {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(1);
+                            apiprocessstep.setApistatus("1");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case：" + apistep.get(i).getId() + " is PASS");
                         } else {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(0);
+                            apiprocessstep.setApistatus("0");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case： " + apistep.get(i).getId() + " is FAILED");
@@ -356,7 +356,7 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         Tools.error("需传入正确的请求类型");
                         apiprocessstep.setId(apistep.get(i).getId());
                         apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                        apiprocessstep.setApistatus(2);
+                        apiprocessstep.setApistatus("2");
                         apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                     }
                 } else if (apistep.get(i).getIsreplace().equals("N")){
@@ -365,14 +365,14 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         if (httpClient.codeStuts == 200 && httpClient.responseStr.contains(apistep.get(i).getApiresult())) {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(1);
+                            apiprocessstep.setApistatus("1");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case：" + apistep.get(i).getId() + " is PASS");
                         } else {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(0);
+                            apiprocessstep.setApistatus("0");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case： " + apistep.get(i).getId() + " is FAILED");
@@ -384,14 +384,14 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         if (httpClient.codeStuts == 200 && httpClient.responseStr.contains(apistep.get(i).getApiresult())) {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(1);
+                            apiprocessstep.setApistatus("1");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case：" + apistep.get(i).getId() + " is PASS");
                         } else {
                             apiprocessstep.setId(apistep.get(i).getId());
                             apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                            apiprocessstep.setApistatus(0);
+                            apiprocessstep.setApistatus("0");
                             apiprocessstep.setApiresponse(httpClient.responseStr);
                             apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                             Tools.step("case： " + apistep.get(i).getId() + " is FAILED");
@@ -402,14 +402,14 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
                         Tools.error("需传入正确的请求类型");
                         apiprocessstep.setId(apistep.get(i).getId());
                         apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                        apiprocessstep.setApistatus(2);
+                        apiprocessstep.setApistatus("2");
                         apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                     }
                 }else {
                     Tools.error("需要替换的response用例执行failed，无法替换，case： " + apistep.get(i).getId() + " 不执行");
                     apiprocessstep.setId(apistep.get(i).getId());
                     apiprocessstep.setApitestId(apistep.get(i).getApitestId());
-                    apiprocessstep.setApistatus(2);
+                    apiprocessstep.setApistatus("2");
                     apiProcessStepDao.updataApiProcessStep(apiprocessstep);
                 }
             }
@@ -417,28 +417,28 @@ public class ApiProcessStepServiceImpl implements ApiProcessStepService {
             List<apiProcessStep> status = apiProcessStepDao.selectApiProcessStepByProductId(param.getInteger("apitestId"));
             List<Integer> statuslist = new ArrayList<Integer>();
             for (int i = 0; i < status.size(); i++) {
-                statuslist.add(status.get(i).getApistatus());
+                statuslist.add(Integer.valueOf(status.get(i).getApistatus()));
             }
             for (int j = 0; j < statuslist.size(); j++) {
                 apiProcessTest apiprocesstest = new apiProcessTest();
                 if (statuslist.get(j)==0) {
                     apiprocesstest.setId(param.getInteger("apiprocesstestId"));
                     apiprocesstest.setProductId(param.getInteger("apitestId"));
-                    apiprocesstest.setApitestresult(0);
+                    apiprocesstest.setApitestresult("0");
                     apiprocesstestdao.updataApiProcessTest(apiprocesstest);
                     flag = true;
                     break;
                 }else if (statuslist.get(j)==2){
                     apiprocesstest.setId(param.getInteger("apiprocesstestId"));
                     apiprocesstest.setProductId(param.getInteger("apitestId"));
-                    apiprocesstest.setApitestresult(2);
+                    apiprocesstest.setApitestresult("2");
                     apiprocesstestdao.updataApiProcessTest(apiprocesstest);
                     flag = true;
                     break;
                 }else if (statuslist.get(j)==1&&j==statuslist.size()-1){
                     apiprocesstest.setId(param.getInteger("apiprocesstestId"));
                     apiprocesstest.setProductId(param.getInteger("apitestId"));
-                    apiprocesstest.setApitestresult(1);
+                    apiprocesstest.setApitestresult("1");
                     apiprocesstestdao.updataApiProcessTest(apiprocesstest);
                     flag = true;
                     break;

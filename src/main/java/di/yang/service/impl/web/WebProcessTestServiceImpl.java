@@ -2,7 +2,7 @@ package di.yang.service.impl.web;
 
 import di.yang.Dao.web.WebProcessTestDao;
 import di.yang.module.web.WebProcessTest;
-import di.yang.service.web.WebProcessTestService;
+import di.yang.service.webService.WebProcessTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -32,6 +32,7 @@ public class WebProcessTestServiceImpl implements WebProcessTestService {
 
     @Override
     public List<WebProcessTest> selectWebProcessTestCase(WebProcessTest webProcessTest) {
+        webProcessTest.setPagenum((webProcessTest.getPagenum()-1)*webProcessTest.getPagesize());
         return webProcessTestDao.selectWebProcessTestCase(webProcessTest);
     }
 }

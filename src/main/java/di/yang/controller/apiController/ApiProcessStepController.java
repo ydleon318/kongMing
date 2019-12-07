@@ -37,7 +37,7 @@ public class ApiProcessStepController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
-        Tools.step("addApiProcessStepResponse is----->"+result);
+        Tools.step("addApiProcessStep response is----->"+result);
         return result;
     }
 
@@ -52,7 +52,7 @@ public class ApiProcessStepController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
-        Tools.step("updataApiProcessStepResponse is----->"+result);
+        Tools.step("updataApiProcessStep response is----->"+result);
         return result;
     }
 
@@ -76,7 +76,7 @@ public class ApiProcessStepController extends BaseController {
         }else {
             result = buildErrorResponse(flag);
         }
-        Tools.step("executeApiProcessStepsResponse is----->"+result);
+        Tools.step("executeApiProcessSteps response is----->"+result);
         return  result;
     }
 

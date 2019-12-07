@@ -19,7 +19,7 @@ public class apiSingleTest extends PageSet{
     private String apimethod;
     private String apiresult;
     private String apiresponse;
-    private int apistatus;
+    private String apistatus;
     private Date createTime;
     private int productId;
     private String delflag;

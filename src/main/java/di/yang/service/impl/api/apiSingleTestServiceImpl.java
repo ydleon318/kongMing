@@ -66,7 +66,7 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                             apiSingleTest api = new apiSingleTest();
                             api.setId(param.getInteger("id"));
                             api.setProductId(apisingletest.getProductId());
-                            api.setApistatus(1);
+                            api.setApistatus("1");
                             api.setApiresponse(httpClient.responseStr);
                             apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is PASS");
@@ -74,7 +74,7 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                             apiSingleTest api = new apiSingleTest();
                             api.setId(param.getInteger("id"));
                             api.setProductId(apisingletest.getProductId());
-                            api.setApistatus(0);
+                            api.setApistatus("0");
                             api.setApiresponse(httpClient.responseStr);
                             apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is FAILED");
@@ -88,7 +88,7 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                             apiSingleTest api = new apiSingleTest();
                             api.setId(param.getInteger("id"));
                             api.setProductId(apisingletest.getProductId());
-                            api.setApistatus(1);
+                            api.setApistatus("1");
                             api.setApiresponse(httpClient.responseStr);
                             apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is PASS");
@@ -96,7 +96,7 @@ public class apiSingleTestServiceImpl implements apiSingleTestService {
                             apiSingleTest api = new apiSingleTest();
                             api.setId(param.getInteger("id"));
                             api.setProductId(apisingletest.getProductId());
-                            api.setApistatus(0);
+                            api.setApistatus("0");
                             api.setApiresponse(httpClient.responseStr);
                             apisingleDao.updataApiSingleTestResult(api);
                             Tools.step("testcase NO "+param.getString("id")+" is FAILED");

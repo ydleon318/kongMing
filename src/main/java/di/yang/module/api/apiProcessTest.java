@@ -14,7 +14,7 @@ public class apiProcessTest extends PageSet {
     private String apitestname;
     private String apitestdesc;
     private String apitester;
-    private int apitestresult;
+    private String apitestresult;
     private Date createTime;
     private int productId;
     private String delflag;
