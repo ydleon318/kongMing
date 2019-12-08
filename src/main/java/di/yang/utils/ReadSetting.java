@@ -64,7 +64,7 @@ public class ReadSetting {
 		prop.load(path);
 		path.close();
 	} catch (Exception e) {
-		MyWebDriver.getLog().warn("webdriver.properties文件路径错误，请检查...");
+		Tools.error("webdriver.properties文件路径错误，请检查...");
 		e.printStackTrace();
 	}
 	return prop;

@@ -1,6 +1,7 @@
 package di.yang.utils;
 
 import com.thoughtworks.selenium.Wait;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,13 +23,13 @@ import org.testng.Reporter;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.Iterator;
+import java.io.File;
+import java.util.*;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-
+import static di.yang.utils.Tools.getAbosoluteTime;
 
 
 /**
@@ -214,12 +215,10 @@ public class MyWebDriver {
         } catch (Exception e) {
             e.printStackTrace();
             log.info("期望出现的元素： “" + xpath + "” 没有找到...");
-            handleFailure("无法找到元素：“" + xpath + "”... ");
         }
         else {
 			if (isElementPresent(xpath, timeout)) {
 				log.info("找到不希望出现的元素 : “" + xpath+"”");
-				handleFailure("找到不希望出现的元素 “" + xpath+"”... ");
 			} else {
 				log.info("没有找到不希望出现的元素： “" + xpath+"”");
 			}
@@ -242,11 +241,9 @@ public class MyWebDriver {
 				}.wait("没有找到文本： “ " + text+"”", timeout);
 			} catch (Exception e) {
 				e.printStackTrace();
-				handleFailure("期望的文本： “" + text +"” 没有找到...");
 			}
 		} else {
 			if (isTextPresent(text, timeout)) {
-				handleFailure("找到不希望出现的文本： “" + text +"”...");
 			} else {
 				log.info("不希望出现的文本： “" + text+"” 没有找到");
 			}
@@ -381,7 +378,6 @@ public class MyWebDriver {
 		} catch (AssertionError e) {
 			e.printStackTrace();
 			log.warn("断言失败，测试用例Failed");
-//			handleFailure("断言失败，截图处理");
 			Assert.fail("用例失败，存在bug！！！");
 		}
 	}
@@ -469,7 +465,6 @@ public class MyWebDriver {
 					return e;
 				}else
 					log.warn("需要的元素id： “"+ id +"” 没有找到");
-					handleFailure("元素： “" + id +"” 没找到...");
 					return null;
 			}
 		});
@@ -490,7 +485,6 @@ public class MyWebDriver {
                     return e;
                 }else
                     log.warn("需要的元素xpath： “"+ xpath +"” 没有找到");
-                handleFailure("元素： “" + xpath+"” 没找到...");
                 return null;
             }
 
@@ -705,7 +699,6 @@ public class MyWebDriver {
 		}catch(Exception e){
 			e.printStackTrace();
 			log.info("网页打开失败");
-			handleFailure("无法打开网页： "+url);
 		}
 
 	}
@@ -722,7 +715,6 @@ public class MyWebDriver {
 		}catch(Exception e){
 			e.printStackTrace();
 			log.info("网页打开失败");
-			handleFailure("无法打开网页： "+url);
 		}
 
 	}
@@ -738,7 +730,6 @@ public class MyWebDriver {
 		}catch(Exception e){
 			e.printStackTrace();
 			log.info("网页打开失败");
-			handleFailure("无法打开网页： "+url);
 		}
 
 	}
@@ -747,16 +738,15 @@ public class MyWebDriver {
 	 * 暂停1000毫秒
 	 */
 	public void pause(){
-
 		waitJsReady();
 	}
 	
 	/**
-	 *暂停millisecond时间
-	 * @param millisecond 毫秒单位
+	 *暂停second时间
+	 * @param second 秒单位
 	 */
-	public void pause(final int millisecond){
-		waitJsReady(millisecond);
+	public void pause(final int second){
+		waitJsReady(second*1000);
 	}
 	
 
@@ -775,7 +765,6 @@ public class MyWebDriver {
 			} catch (Exception e) {
 				e.printStackTrace();
 				log.info(xpath+" 没有找到");
-				handleFailure("点击的元素：  “"+xpath+"” 没有找到...");
 			}
 	}
 	
@@ -793,7 +782,6 @@ public class MyWebDriver {
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.info(xpath+ " 没有找到");
-			handleFailure("被点击元素：  “"+xpath+"”  没有找到...");
 		}	
 	}
 
@@ -889,7 +877,7 @@ public class MyWebDriver {
 	}
 	
 	/**
-	 * 想输入框输入信息
+	 * 向输入框输入信息
 	 * @param text 想要输入的文本信息
 	 * @param xpath 输入框的xpath
 	 */
@@ -906,7 +894,6 @@ public class MyWebDriver {
 			we.sendKeys(text);
 		} catch (Exception e) {
 			e.printStackTrace();
-//			handleFailure("向输入框：  “"+xpath+"” 输入失败...");
 			
 		}
 		
@@ -929,8 +916,6 @@ public class MyWebDriver {
 			element.sendKeys(text);
 		} catch (Exception e) {
 			e.printStackTrace();
-			handleFailure("向输入框输入失败...");
-
 		}
 
 	}
@@ -960,7 +945,6 @@ public class MyWebDriver {
 		} catch (Exception e) {
 			log.info("无法选中列表： “"+text+"”");
 			e.printStackTrace();
-			handleFailure("选择列表： “" + text+"” 失败...");
 		}
 		
 	}
@@ -978,7 +962,6 @@ public class MyWebDriver {
 		} catch (Exception e) {
 			log.info("无法选中列表： “"+text+"”");
 			e.printStackTrace();
-			handleFailure("选择列表： “" + text+"” 失败...");
 		}
 
 	}
@@ -997,7 +980,6 @@ public class MyWebDriver {
 		} catch (Exception e) {
 			log.info("选择的第： “"+ index+1 +"” 个列表没有找到...");
 			e.printStackTrace();
-			handleFailure("选择的第： “" + index+1 +"” 个列表失败...");
 		}
 	}
 	
@@ -1012,7 +994,6 @@ public class MyWebDriver {
 		} catch (Exception e) {
 			log.info("关闭浏览器失败");
 			e.printStackTrace();
-			handleFailure("无法关闭浏览器...");
 		}
 			
 	}
@@ -1077,7 +1058,6 @@ public class MyWebDriver {
 		}catch(Exception e){
 			e.printStackTrace();
 			log.info("获取窗口title失败");
-			handleFailure("获取title失败...");
 		}
 		return title;
 	}
@@ -1125,11 +1105,9 @@ public class MyWebDriver {
 							continue;
 					}
 				}
-		
 			}catch(NoSuchWindowException e){
 				e.printStackTrace();
 				log.info("切换窗口: “" + windowTitle + "” 失败！");
-				handleFailure("切换窗口 “" + windowTitle+"” 失败...");
 			}
 			return driver.getWindowHandles();
 		}
@@ -1159,7 +1137,6 @@ public class MyWebDriver {
 	            }    
 	        } catch (Exception e) {    
 	        	log.info("切换窗口: “" + windowTitle + "” 失败！");
-				handleFailure("切换窗口 “" + windowTitle+"” 失败...");
 	            flag = false;    
 	        }    
 	        return flag;    
@@ -1176,7 +1153,6 @@ public class MyWebDriver {
 		String cwh = its.next();		
 		if(!cwh.equals(ori)){	
 			driver.switchTo().window(cwh);
-			
 			log.info("已经切换到新开启的窗口...");   
 			break;
 			}
@@ -1194,7 +1170,6 @@ public class MyWebDriver {
 			log.info("返回到窗口： “"+ title +"” 界面");
 		}catch(Exception e){
 			log.info("窗口回退失败");
-			handleFailure("窗口回退失败...");
 		}
 		pause(stepInterval);
 	}
@@ -1210,7 +1185,6 @@ public class MyWebDriver {
 			log.info("前进到窗口： “"+ title +"” 界面�");
 		}catch(Exception e){
 			log.info("窗口前进失败");
-			handleFailure("窗口前进失败...");
 		}
 		pause(stepInterval);
 	}
@@ -1225,7 +1199,6 @@ public class MyWebDriver {
 			log.info("成功关闭当前窗口");
 		}catch(Exception e){
 			e.printStackTrace();
-			handleFailure("窗口关闭失败...");
 		}
 	}
 	
@@ -1265,7 +1238,6 @@ public class MyWebDriver {
 			}catch(Exception e){
 				e.printStackTrace();
 				log.info("关闭Alert失败");
-				handleFailure("关闭Alert失败...");
 			}
 		}
 		
@@ -1416,7 +1388,7 @@ public class MyWebDriver {
 	 * 错误处理控件，附带截图
 	 * @param notice 想要输出的错误信息
 	 */
-	public void handleFailure(final String notice){
+	public void handleFailure(String notice){
 		String png = Tools.screenShot(this);
 		String logStrings = notice + " 进行截图处理"
 				+ png;
@@ -1424,7 +1396,25 @@ public class MyWebDriver {
 		log.error(logStrings);
 		Assert.fail(logStrings);
 	}
-	
+
+	public String screenShot(WebDriver dr){
+		String dir = "screenshot";
+		String time = getAbosoluteTime();
+		System.out.println("目前的时间是:" + time);
+		String screenShotPath = dir + File.separator + time + ".png";
+		try {
+			File sourceFile = ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(sourceFile, new File(screenShotPath));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "截图失败";
+		}
+		return screenShotPath;
+	}
+
+
+
+
 	/**
 	 * 设置divid
 	 * @param divid div结点后面的id属性
@@ -1463,7 +1453,6 @@ public class MyWebDriver {
 	 * 模拟按回车键
 	 */
 	public void pressEnter() {
-//		pause(stepInterval);
 		Robot rb = null;
 		try {
 			rb = new Robot();
@@ -1474,7 +1463,6 @@ public class MyWebDriver {
 		}catch (AWTException e) {
 			log.info("按ENTER键失败");
 			e.printStackTrace();
-			handleFailure("按ENTER键失败...");
 		}
 	
 	}
@@ -1494,7 +1482,6 @@ public class MyWebDriver {
 		} catch (AWTException e) {
 			log.info("按下Tab键失败");
 			e.printStackTrace();
-			handleFailure("按下Tab键失败...");
 		}
 		
 	}
@@ -1511,7 +1498,6 @@ public class MyWebDriver {
 			log.info("模拟键盘输入： “" + text +"”");
 			p.waitFor();
 		} catch (Exception e) {
-			handleFailure("模拟键盘输入： “" + text +"” 失败");
 			e.printStackTrace();
 		} finally {
 			p.destroy();
@@ -1530,7 +1516,6 @@ public class MyWebDriver {
 			log.info("双击元素： “" + xpath +"”");
 		} catch (Exception e) {
 			e.printStackTrace();
-			handleFailure("双击元素： “"+xpath+"” 失败...");
 
 		}
 	}
@@ -1546,7 +1531,6 @@ public class MyWebDriver {
 			log.info("点击元素： “" + xpath +"”");
 		} catch (Exception e) {
 			e.printStackTrace();
-			handleFailure("点击元素： “"+xpath+"” 失败...");
 		}	
 	}
 
@@ -1560,7 +1544,6 @@ public class MyWebDriver {
 			log.info("成功点击元素并不释放");
 		} catch (Exception e) {
 			e.printStackTrace();
-			handleFailure("点击元素失败...");
 		}
 	}
 
@@ -1576,7 +1559,6 @@ public class MyWebDriver {
 			log.info("右键点击元素： “" + xpath +"”");
 		} catch (Exception e){
 			e.printStackTrace();
-			handleFailure("右键点击元素： “" + xpath +"” 失败...");
 		}
 	}
 	
@@ -1591,7 +1573,6 @@ public class MyWebDriver {
 			log.info("鼠标移动至元素： “" + xpath +"” 之上");
 		}catch(Exception e){
 			e.printStackTrace();
-			handleFailure("鼠标移动至元素： “"+xpath+"” 失败...");
 		}
 	}
 	
@@ -1607,7 +1588,6 @@ public class MyWebDriver {
 			log.info("鼠标移动至元素： “" + text +"” 之上");
 		}catch(Exception e){
 			e.printStackTrace();
-			handleFailure("鼠标移动至元素： “"+text+"” 失败...");
 		}
 	}
 	
@@ -1623,7 +1603,6 @@ public class MyWebDriver {
 			log.info("鼠标移动至元素： “" + id +"” 之上");
 		}catch(Exception e){
 			e.printStackTrace();
-			handleFailure("鼠标移动至元素： “"+ id +"” 失败...");
 		}
 	}
 	
@@ -1640,7 +1619,6 @@ public class MyWebDriver {
 			log.info("将元素： “" + source +"” 拖拽至 “"+ target +"” 成功");
 		}catch(Exception e){
 			e.printStackTrace();
-			handleFailure("将元素： “" + source +"” 拖拽至 “"+ target +"” 失败...");;
 		}
 	}
 

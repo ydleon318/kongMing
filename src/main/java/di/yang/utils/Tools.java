@@ -212,7 +212,7 @@ public class Tools {
 			FileUtils.copyFile(file, new File(screenShotPath));
 
 		} catch (Exception e) {
-			MyWebDriver.getLog().error("截屏错误...");
+	        e.printStackTrace();
 		}
 		return screenShotPath;
 	}

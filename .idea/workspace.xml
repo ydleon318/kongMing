@@ -2,27 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="244fead7-0aaa-4b20-9b3e-0733dde30c52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/yang/Dao/impl/web/WebProcessStepDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/yang/Dao/web/WebProcessStepDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/yang/controller/webController/WebProcessStepController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/yang/service/impl/web/WebProcessStepServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/yang/service/webService/WebProcessStepService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/webdriverTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/LogFile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/LogFile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/module/web/WebProcessStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/module/web/WebProcessStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/service/impl/web/WebProcessTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/service/impl/web/WebProcessTestServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/utils/ReadSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/utils/ReadSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/web/kongming_web_SQLMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/web/kongming_web_SQLMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/prop.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webdriver.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ResponseJsonDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ResponseJsonDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/demoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/demoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/module/web/WebProcessStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/module/web/WebProcessStep.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/service/impl/web/WebProcessTestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/service/impl/web/WebProcessTestServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/web/kongming_web_SQLMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/web/kongming_web_SQLMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/ReadSetting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/ReadSetting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/Tools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prop.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ResponseJsonDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/demoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/demoTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/Gatling/target/" />
@@ -51,10 +49,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="257" column="23" lean-forward="true" selection-start-line="257" selection-start-column="23" selection-end-line="257" selection-end-column="23" />
+            <state relative-caret-position="247">
+              <caret line="1399" column="50" lean-forward="true" selection-start-line="1399" selection-start-column="50" selection-end-line="1399" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#18631#18632#0" expanded="true" />
+                <element signature="e#18651#18652#0" expanded="true" />
+                <element signature="e#18994#18995#0" expanded="true" />
+                <element signature="e#19025#19026#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +65,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="60" />
+            <state relative-caret-position="69">
+              <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/webdriverTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/di/yang/VO/AutoReplaceValueVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/controller/apiController/apiSingleTestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/controller/apiController/ApiSingleTestController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/product/kongming_product_SQLMapper.xml" />
@@ -111,7 +124,6 @@
         <option value="$PROJECT_DIR$/src/test/java/testNG.java" />
         <option value="$PROJECT_DIR$/src/test/java/appiumTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/utils/BetterHttpClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/module/product/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/module/bugManagement/BugManagement.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/module/web/webProcessTest.java" />
@@ -139,7 +151,9 @@
         <option value="$PROJECT_DIR$/src/main/java/di/yang/service/impl/web/WebProcessStepServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/demoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ResponseJsonDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/utils/ReadSetting.java" />
+        <option value="$PROJECT_DIR$/src/test/java/webdriverTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java" />
       </list>
     </option>
@@ -187,8 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="CatdeaLogs" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,14 +303,20 @@
               <item name="kongMing" type="b2602c69:ProjectViewProjectNode" />
               <item name="kongMing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kongMing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kongMing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,7 +326,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575793670520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575814808041" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../risk-git" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -335,7 +355,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="TestNG.webdriverTest.test01">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="di.yang.Application" />
       <module name="kongMing" />
@@ -354,20 +374,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ResponseJsonDemo" />
       <option name="METHOD_NAME" value="test01" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResponseJsonDemo.test05" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="kongMing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ResponseJsonDemo" />
-      <option name="METHOD_NAME" value="test05" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -405,20 +411,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="webdriverTest.test01" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="kongMing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="webdriverTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="TestNG.ResponseJsonDemo.test05" />
       <item itemvalue="TestNG.ResponseJsonDemo.test06" />
       <item itemvalue="TestNG.ResponseJsonDemo.test01" />
       <item itemvalue="TestNG.ResponseJsonDemo.test07" />
+      <item itemvalue="TestNG.webdriverTest.test01" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.webdriverTest.test01" />
         <item itemvalue="Application.Application" />
         <item itemvalue="TestNG.ResponseJsonDemo.test07" />
         <item itemvalue="TestNG.ResponseJsonDemo.test01" />
         <item itemvalue="TestNG.ResponseJsonDemo.test06" />
-        <item itemvalue="TestNG.ResponseJsonDemo.test05" />
       </list>
     </recent_temporary>
   </component>
@@ -459,14 +477,12 @@
       <workItem from="1575706264019" duration="6616000" />
       <workItem from="1575721679449" duration="2657000" />
       <workItem from="1575790785667" duration="2881000" />
-      <workItem from="1575810744248" duration="2245000" />
+      <workItem from="1575810744248" duration="2479000" />
+      <workItem from="1575813261021" duration="1838000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ResponseJsonDemo_test05 - 2019.11.25 at 22h 30m 39s.xml">
-      <configuration name="ResponseJsonDemo.test05" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="ResponseJsonDemo_test05 - 2019.11.25 at 22h 40m 28s.xml">
       <configuration name="ResponseJsonDemo.test05" configurationId="TestNG" />
     </history-entry>
@@ -494,15 +510,18 @@
     <history-entry file="ResponseJsonDemo_test05 - 2019.11.25 at 23h 02m 44s.xml">
       <configuration name="ResponseJsonDemo.test05" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="webdriverTest_test01 - 2019.12.08 at 22h 20m 16s.xml">
+      <configuration name="webdriverTest.test01" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123200000" />
+    <option name="totallyTimeSpent" value="125272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24253732" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24520256" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Web" order="3" side_tool="true" />
@@ -512,13 +531,13 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34815618" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34815618" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27765727" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32908705" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3275488" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
@@ -543,13 +562,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://G:/apache-maven-3.6.0/local/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://G:/apache-maven-3.6.0/local/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/executor/CachingExecutor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -904,29 +916,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/LogFile.log.2019-12-07" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/ReadSetting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="66" column="71" lean-forward="true" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/webdriver.properties">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="60" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://G:/apache-maven-3.6.0/local/org/testng/testng/6.10/testng-6.10.jar!/org/testng/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -935,12 +926,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="257" column="23" lean-forward="true" selection-start-line="257" selection-start-column="23" selection-end-line="257" selection-end-column="23" />
+        <state relative-caret-position="475">
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/ReadSetting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="66" column="57" lean-forward="true" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/webdriverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="1399" column="50" lean-forward="true" selection-start-line="1399" selection-start-column="50" selection-end-line="1399" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#18631#18632#0" expanded="true" />
+            <element signature="e#18651#18652#0" expanded="true" />
+            <element signature="e#18994#18995#0" expanded="true" />
+            <element signature="e#19025#19026#0" expanded="true" />
           </folding>
         </state>
       </provider>
