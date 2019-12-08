@@ -21,9 +21,9 @@ public class demoTest {
         return flag;
     }
 
-    @Test
-    public void test(){
-        boolean flag =  addBug("测试用的","{'json':'222'}","通过","没通过",4,"我自己","she",2);
-        System.out.printf(String.valueOf(flag));
-    }
+//    @Test
+//    public void test(){
+//        boolean flag =  addBug("测试用的","{'json':'222'}","通过","没通过",4,"我自己","she",2);
+//        System.out.printf(String.valueOf(flag));
+//    }
 }

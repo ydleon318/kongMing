@@ -1,5 +1,6 @@
 package di.yang.module.web;
 
+import di.yang.module.PageSet;
 import lombok.Data;
 
 /**
@@ -7,7 +8,7 @@ import lombok.Data;
  * @Date 2019/12/6 11:29
  **/
 @Data
-public class WebProcessStep {
+public class WebProcessStep extends PageSet {
     private int id;
     private String webcasename;
     private String webteststep;

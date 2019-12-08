@@ -13,6 +13,21 @@
         <result property="delflag" column="delflag"/>
     </resultMap>
 
+    <resultMap id="WebProcessStepMap" type="di.yang.module.web.WebProcessStep">
+        <id property="id" column="id"/>
+        <result property="webcasename" column="webcasename"/>
+        <result property="webteststep" column="webteststep"/>
+        <result property="webtestobjname" column="webtestobjname"/>
+        <result property="webfindmethod" column="webfindmethod"/>
+        <result property="webevelement" column="webevelement"/>
+        <result property="weboptmethod" column="weboptmethod"/>
+        <result property="webtestdata" column="webtestdata"/>
+        <result property="webassertdata" column="webassertdata"/>
+        <result property="webtestresult" column="webtestresult"/>
+        <result property="createTime" column="create_time"/>
+        <result property="webcaseId" column="webcase_id"/>
+    </resultMap>
+
     <!--添加web界面测试用例-->
     <insert id="addWebProcessTestCase" parameterType="di.yang.module.web.WebProcessTest">
         INSERT INTO web_process_test (webcasename,webtester,create_time,product_id,delflag)
@@ -60,8 +75,80 @@
         limit #{pagesize} offset #{pagenum}
     </select>
 
+    <!--添加web测试用例步骤-->
+    <insert id="addWebProcessStep" parameterType="di.yang.module.web.WebProcessStep">
+        INSERT INTO web_process_step (webcasename,webteststep,webtestobjname,webfindmethod,webevelement,weboptmethod,webtestdata,webassertdata,create_time,webcase_id)
+        VALUES (#{webcasename},#{webteststep},#{webtestobjname},#{webfindmethod},#{webevelement},#{weboptmethod},#{webtestdata},#{webassertdata},NOW(),#{webcaseId})
+    </insert>
 
+    <!--修改web测试用例步骤-->
+    <update id="updataWebProcessStep" parameterType="di.yang.module.web.WebProcessStep">
+        UPDATE web_process_step
+        <trim prefix="set" suffixOverrides=",">
+            <if test="webcasename != null and '' !=webcasename">
+                webcasename=#{webcasename},</if>
+            <if test="webteststep != null and '' !=webteststep">
+                webteststep=#{webteststep},</if>
+            <if test="webtestobjname != null and '' !=webtestobjname">
+                webtestobjname=#{webtestobjname},</if>
+            <if test="webfindmethod != null and '' !=webfindmethod">
+                webfindmethod=#{webfindmethod},</if>
+            <if test="webevelement != null and '' !=webevelement">
+                webevelement=#{webevelement},</if>
+            <if test="weboptmethod != null and '' !=weboptmethod">
+                weboptmethod=#{weboptmethod},</if>
+            <if test="webtestdata != null and '' !=webtestdata">
+                webtestdata=#{webtestdata},</if>
+            <if test="webassertdata != null and '' !=webassertdata">
+                webassertdata=#{webassertdata},</if>
+            <if test="webtestresult != null and '' !=webtestresult">
+                webtestresult=#{webtestresult},</if>
+        </trim>
+        WHERE id = #{id}
+    </update>
 
-
+    <!--查询web测试用例步骤-->
+    <select id="selectWebProcessStep" parameterType="di.yang.module.web.WebProcessStep" resultMap="WebProcessStepMap">
+        SELECT * FROM web_process_step
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null != id and '' !=id">
+                AND id=#{id}
+            </if>
+            <if test="null != webcasename and '' !=webcasename">
+                AND webcasename like '%${webcasename}%'
+            </if>
+            <if test="null != webteststep and '' !=webteststep">
+                AND webteststep=#{webteststep}
+            </if>
+            <if test="null != webtestobjname and '' !=webtestobjname">
+                AND webtestobjname like '%${webtestobjname}%'
+            </if>
+            <if test="null != webfindmethod and '' !=webfindmethod">
+                AND webfindmethod like '%${webfindmethod}%'
+            </if>
+            <if test="null != webevelement and '' !=webevelement">
+                AND webevelement like '%${webevelement}%'
+            </if>
+            <if test="null != weboptmethod and '' !=weboptmethod">
+                AND weboptmethod=#{weboptmethod}
+            </if>
+            <if test="null != webtestdata and '' !=webtestdata">
+                AND webtestdata like '%${webtestdata}%'
+            </if>
+            <if test="null != webassertdata and '' !=webassertdata">
+                AND webassertdata like '%${webassertdata}%'
+            </if>
+            <if test="null != webtestresult and '' !=webtestresult">
+                AND webtestresult like '%${webtestresult}%'
+            </if>
+            <if test="null != createTime and '' !=createTime">
+                AND create_time like '%${createTime}%'
+            </if>
+            <if test="null != webcaseId and '' !=webcaseId">
+                AND webcase_id like '%${webcaseId}%'
+            </if>
+        </trim>
+          limit #{pagesize} offset #{pagenum}
+    </select>
 
 </mapper>

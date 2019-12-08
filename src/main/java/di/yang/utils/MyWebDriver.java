@@ -53,15 +53,8 @@ public class MyWebDriver {
 	private WebDriverWait wait;
 	private int timeout = Integer.parseInt(ReadSetting.timeout);
 //-------------------------------log4j日志文件配置---------------------------	
-	private static Logger log = Logger.getLogger(MyWebDriver.class.getName());
-	public static Logger getLog() {
-		return log;
-	}
+	private static Logger log = Logger.getLogger(MyWebDriver.class);
 
-	public static void setLog(final Logger newLog) {
-		log = newLog;
-	}
-	
 	public WebDriver getDriver() {
 		return driver;
 	}
@@ -210,7 +203,6 @@ public class MyWebDriver {
 	 * @param xpath 元素xpath
 	 * @param timeout 超时时间
 	 */
-	@SuppressWarnings("deprecation")
 	public void expectElementExistOrNot(final boolean expectExist, final String xpath, final int timeout) {
 		if (expectExist) try {
            new Wait() {
@@ -389,7 +381,7 @@ public class MyWebDriver {
 		} catch (AssertionError e) {
 			e.printStackTrace();
 			log.warn("断言失败，测试用例Failed");
-			handleFailure("断言失败，截图处理");
+//			handleFailure("断言失败，截图处理");
 			Assert.fail("用例失败，存在bug！！！");
 		}
 	}

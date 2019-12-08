@@ -58,13 +58,13 @@ public class ReadSetting {
 	public  static  Properties getProperties() {
 	try{
 		prop = new Properties();
-		InputStream path = Thread.currentThread().getContextClassLoader().getResourceAsStream("prop.properties");
+		InputStream path = Thread.currentThread().getContextClassLoader().getResourceAsStream("webdriver.properties");
 		System.out.println(path);
 //		InputStream input = new FileInputStream(path);
 		prop.load(path);
 		path.close();
 	} catch (Exception e) {
-		MyWebDriver.getLog().warn("prop.properties文件路径错误，请检查...");
+		MyWebDriver.getLog().warn("webdriver.properties文件路径错误，请检查...");
 		e.printStackTrace();
 	}
 	return prop;
