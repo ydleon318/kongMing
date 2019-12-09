@@ -1224,7 +1224,6 @@ public class MyWebDriver {
 		    } finally {
 		      acceptNextAlert = true;
 		    }
-		    
 		  }
 		
 		/**

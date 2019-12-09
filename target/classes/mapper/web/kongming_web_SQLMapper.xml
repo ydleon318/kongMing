@@ -26,6 +26,7 @@
         <result property="webtestresult" column="webtestresult"/>
         <result property="createTime" column="create_time"/>
         <result property="webcaseId" column="webcase_id"/>
+        <result property="screenShotPath" column="screenshot_path"/>
     </resultMap>
 
     <!--添加web界面测试用例-->
@@ -103,6 +104,8 @@
                 webassertdata=#{webassertdata},</if>
             <if test="webtestresult != null and '' !=webtestresult">
                 webtestresult=#{webtestresult},</if>
+            <if test="screenShotPath != null and '' !=screenShotPath">
+                screenshot_path=#{screenShotPath},</if>
         </trim>
         WHERE id = #{id}
     </update>
@@ -147,6 +150,10 @@
             <if test="null != webcaseId and '' !=webcaseId">
                 AND webcase_id like '%${webcaseId}%'
             </if>
+            <if test="null != screenShotPath and '' !=screenShotPath">
+                AND screenshot_path like '%${screenShotPath}%'
+            </if>
+
         </trim>
           limit #{pagesize} offset #{pagenum}
     </select>
