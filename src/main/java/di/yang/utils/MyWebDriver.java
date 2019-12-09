@@ -1397,6 +1397,11 @@ public class MyWebDriver {
 		Assert.fail(logStrings);
 	}
 
+	/**
+	 * 截屏
+	 * @param dr
+	 * @return
+	 */
 	public String screenShot(WebDriver dr){
 		String dir = "screenshot";
 		String time = getAbosoluteTime();

@@ -21,4 +21,5 @@ public class WebProcessStep extends PageSet {
     private String webtestresult;
     private String createTime;
     private String webcaseId;
+    private String screenShotPath;
 }
