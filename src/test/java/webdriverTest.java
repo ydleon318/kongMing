@@ -1,5 +1,6 @@
 import di.yang.enumList.WebOptMethod;
 import di.yang.utils.Tools;
+import org.apache.poi.ss.formula.functions.T;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
@@ -13,13 +14,9 @@ import java.util.Map;
  */
 public class webdriverTest {
 
-    @Test
+//    @Test
     public void test01(){
-        try {
-            System.out.printf(String.valueOf(getAllEnumByClassName("WebOptMethod")));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.printf(String.valueOf(WebOptMethod.getWebOptMethodList()));
     }
 
     /**
