@@ -8,13 +8,19 @@ import java.util.List;
  * @Date 2019/12/9 16:29
  **/
 public enum WebOptMethod {
-    openUrl("打开网页"),pause("暂停"),
-    click("点击"),clickText("点击页面文本"),
-    sendKey("输入"), selectByText("选择下拉列表文本"),
-    closeURL("关闭网页"),getTitle("获取窗口title"),
-    reFresh("刷新"),selectWindow("窗口切换"),
-    Back("窗口回退"),forward("窗口前进"),
-    closeWindow("关闭当前窗口"),closeAlter("关闭对话框"),
+    openUrl("打开网页"),
+    pause("暂停"),
+    click("点击"),
+    sendKey("输入"),
+    selectByText("选择下拉列表文本"),
+    closeURL("关闭网页"),
+    getTitle("获取窗口title"),
+    reFresh("刷新"),
+    selectWindow("窗口切换"),
+    Back("窗口回退"),
+    forward("窗口前进"),
+    closeWindow("关闭当前窗口"),
+    closeAlter("关闭对话框"),
     closeAlertAndGetItsText("获取对话框文本并关闭");
 
     private String msg;

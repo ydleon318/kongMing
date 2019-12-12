@@ -26,4 +26,9 @@ public class WebProcessStepDaoImpl extends BaseGetData implements WebProcessStep
     public List<WebProcessStep> selectWebProcessStep(WebProcessStep webProcessStep) {
         return getDataBaseListInfo(dataBasexml,"selectWebProcessStep",webProcessStep);
     }
+
+    @Override
+    public List<WebProcessStep> selectWebProcessStepByWebcaseId(int webcaseId) {
+        return getDataBaseListInfo(dataBasexml,"selectWebProcessStepByWebcaseId",webcaseId);
+    }
 }

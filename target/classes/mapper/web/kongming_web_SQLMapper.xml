@@ -153,9 +153,11 @@
             <if test="null != screenShotPath and '' !=screenShotPath">
                 AND screenshot_path like '%${screenShotPath}%'
             </if>
-
         </trim>
           limit #{pagesize} offset #{pagenum}
+    </select>
+    <select id="selectWebProcessStepByWebcaseId" parameterType="Integer" resultMap="WebProcessStepMap">
+        SELECT * FROM web_process_step where webcase_id = #{webcaseId} ORDER BY webteststep
     </select>
 
 </mapper>

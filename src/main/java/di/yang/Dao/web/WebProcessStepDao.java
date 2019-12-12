@@ -1,6 +1,7 @@
 package di.yang.Dao.web;
 
 import di.yang.module.web.WebProcessStep;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -28,4 +29,11 @@ public interface WebProcessStepDao {
      * @return
      */
    List<WebProcessStep> selectWebProcessStep(WebProcessStep webProcessStep);
+
+    /**
+     * 通过webcaseid查找测试步骤
+     * @param webcaseId web测试用例id
+     * @return
+     */
+   List<WebProcessStep> selectWebProcessStepByWebcaseId(@Param("webcaseId") int webcaseId);
 }

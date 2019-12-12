@@ -20,6 +20,6 @@ public class WebProcessStep extends PageSet {
     private String webassertdata;
     private String webtestresult;
     private String createTime;
-    private String webcaseId;
+    private int webcaseId;
     private String screenShotPath;
 }
