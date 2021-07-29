@@ -1,0 +1,96 @@
+2019-12-11 13:16:45,985 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:16:46,467 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:16:46,468 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:16:46,468 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:16:46,468 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:16:47,740 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:16:48,895 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 13:16:48,900 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:16:48,954 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:16:49,011 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:26:26,650 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:26:27,185 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:26:27,185 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:26:27,185 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:26:27,185 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:26:27,952 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:26:28,584 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 782378927.
+2019-12-11 13:26:28,589 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:26:28,685 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:26:28,723 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:26:28,811 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:34:34,206 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:34:34,469 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:34:34,469 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:34:34,469 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:34:34,470 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:34:34,888 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:34:35,226 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 782378927.
+2019-12-11 13:34:35,228 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:34:35,271 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:34:35,321 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:34:35,403 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:38:42,243 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:38:42,722 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:38:42,722 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:38:42,722 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:38:42,722 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:38:43,398 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:38:43,916 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 13:38:43,918 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:38:43,964 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:38:44,054 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:43:21,173 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:43:21,578 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:43:21,578 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:43:21,578 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:43:21,578 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:43:22,369 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:43:23,003 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 13:43:23,007 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:43:23,127 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:43:23,197 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:43:23,333 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:45:24,108 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 13:45:24,728 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:45:24,728 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:45:24,728 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:45:24,728 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 13:45:25,564 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 13:45:26,130 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 13:45:26,133 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 13:45:26,193 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 13:45:26,322 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 13:45:26,504 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:24,201 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 15:19:24,740 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:24,740 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:24,740 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:24,740 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:25,507 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 15:19:26,153 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 15:19:26,157 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 15:19:26,234 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 15:19:26,302 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 15:19:26,411 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:19:59,058 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 15:20:00,300 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:20:00,301 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:20:00,301 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:20:00,301 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:20:00,961 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 15:20:01,326 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 15:20:01,331 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 15:20:01,398 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 15:20:01,461 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 15:32:20,004 [main] DEBUG [org.apache.ibatis.logging.LogFactory] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-12-11 15:32:20,864 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:32:20,865 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:32:20,865 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:32:20,865 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.
+2019-12-11 15:32:21,797 [main] DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Opening JDBC Connection
+2019-12-11 15:32:22,465 [main] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Created connection 1237550792.
+2019-12-11 15:32:22,474 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==>  Preparing: SELECT * FROM web_process_step where webcase_id = ? ORDER BY webteststep 
+2019-12-11 15:32:22,529 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - ==> Parameters: 1(Integer)
+2019-12-11 15:32:22,587 [main] DEBUG [di.yang.module.web.selectWebProcessStepByWebcaseId] - <==      Total: 2
+2019-12-11 15:32:22,678 [Finalizer] DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - PooledDataSource forcefully closed/removed all connections.

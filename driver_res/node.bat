@@ -1,0 +1,1 @@
+java -jar grid.jar -role node -hub http://172.30.197.122:5566/grid/register/ -port 5577  -maxSession 5 -browser browserName=chrome,seleniumProtocol=WebDriver,maxInstances=5,platform=WINDOWS

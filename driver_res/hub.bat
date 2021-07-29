@@ -1,0 +1,1 @@
+java -jar grid.jar -role hub -maxSession 10 -port 5566

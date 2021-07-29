@@ -12,7 +12,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.internal.WrapsDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -24,6 +26,8 @@ import org.testng.Reporter;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -153,6 +157,31 @@ public class MyWebDriver {
 		this.wait = new WebDriverWait(this.driver, 30); 
 		boolWaitEachStep = false;
 		retry = 1;
+		javaScriptExecutor = (JavascriptExecutor) driver;
+	}
+
+	/**
+	 * grid设置远程浏览器
+	 * @param node http://主控机ip:端口/wd/hub
+	 * @param browserType chrome,firefox
+	 */
+	public void setRemoteDriver(String node,String browserType){
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		if (browserType.equals("chrome")){
+			capabilities.setBrowserName(BrowserType.CHROME);
+		}
+		if (browserType.equals("firefox")){
+			capabilities.setBrowserName(BrowserType.FIREFOX);
+		}
+		try {
+			driver = new RemoteWebDriver(new URL(node),capabilities);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		maxDriverScreen();
+		this.wait = new WebDriverWait(this.driver, 30);
+		boolWaitEachStep = false;
+		retry = 0;
 		javaScriptExecutor = (JavascriptExecutor) driver;
 	}
 	
