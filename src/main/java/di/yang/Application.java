@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -19,7 +20,10 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        context = SpringApplication.run(Application.class, args);
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
+        context = builder.headless(false).run(args);
+
+//         SpringApplication.run(Application.class, args);
     }
 
     @PreDestroy

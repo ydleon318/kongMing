@@ -47,7 +47,7 @@ import static di.yang.utils.Tools.getAbosoluteTime;
  */
 @SuppressWarnings("deprecation")
 @Repository
-public class MyWebDriver {
+public class MyWebDriver  {
 	private int stepInterval = Integer.parseInt(ReadSetting.StepInterval);
 	private WebDriver driver ;
 	private boolean acceptNextAlert = true;
@@ -108,8 +108,8 @@ public class MyWebDriver {
 			case "firefox":
 				System.setProperty("webdriver.gecko.driver", ReadSetting.FirefoxDriverPath);
 				FirefoxBinary firefoxBinary = new FirefoxBinary();
-				firefoxBinary.addCommandLineOptions("--headless");
-				firefoxBinary.addCommandLineOptions("window-size=1920,3000");
+//				firefoxBinary.addCommandLineOptions("--headless");
+//				firefoxBinary.addCommandLineOptions("window-size=1920,3000");
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
 				firefoxOptions.setBinary(firefoxBinary);
 				driver = new FirefoxDriver(firefoxOptions);
@@ -129,8 +129,8 @@ public class MyWebDriver {
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", ReadSetting.ChromeDriverPath);
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.addArguments("--headless");
-				chromeOptions.addArguments("window-size=1920,1080");
+//				chromeOptions.addArguments("--headless");
+//				chromeOptions.addArguments("window-size=1920,1080");
 				driver = new ChromeDriver(chromeOptions);
 				log.info("使用Chrome浏览器执行");
 				maxDriverScreen();
@@ -485,7 +485,7 @@ public class MyWebDriver {
 	 * @return 返回webelement类型
 	 */
 	public WebElement waitById(final String id) {
-		waitJsReady();
+//		waitJsReady();
 		return (new WebDriverWait(driver, timeout/1000)).until(new ExpectedCondition<WebElement>() {
 			public WebElement apply(final WebDriver d) {
 				WebElement e = d.findElement(By.id(id));
@@ -505,7 +505,7 @@ public class MyWebDriver {
 	 * @return WebElement返回类型
 	 */
 	public WebElement waitByXpath(final String xpath) {
-		waitJsReady();
+//		waitJsReady();
 		return (new WebDriverWait(driver, timeout/1000)).until(new ExpectedCondition<WebElement>(){
             public WebElement apply(final WebDriver d){
                 WebElement e = d.findElement(By.xpath(xpath));
@@ -769,6 +769,18 @@ public class MyWebDriver {
 	public void pause(){
 		waitJsReady();
 	}
+
+	/**
+	 * 线程等待
+	 * @param second 等待秒数
+	 */
+	public void sleep(int second){
+		try {
+			Thread.sleep(second*1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 *暂停second时间
@@ -802,7 +814,7 @@ public class MyWebDriver {
 	 * @param xpath 
 	 */
 	public void click(String xpath){
-		pause(1000);
+		sleep(1);
 		waitClickable(xpath);
 		expectElementExistOrNot(true, xpath, timeout);
 		try {
@@ -925,8 +937,9 @@ public class MyWebDriver {
 			e.printStackTrace();
 			
 		}
-		
 	}
+
+
 
 	/**
 	 * 向元素中输入文本信息
@@ -1016,7 +1029,7 @@ public class MyWebDriver {
 	 * 关闭浏览器
 	 */
 	public void closeURL(){
-		pause(stepInterval);
+//		pause(stepInterval);
 		try {
 			    log.info("关闭浏览器");
 		    	driver.quit();
@@ -1508,7 +1521,7 @@ public class MyWebDriver {
 		Robot rb = null;
 		try {
 			rb = new Robot();
-			rb.keyPress(KeyEvent.VK_TAB); 
+			rb.keyPress(KeyEvent.VK_TAB);
 			rb.delay(100); 
 			rb.keyRelease(KeyEvent.VK_TAB); 
 			log.info("按下Tab键");
@@ -1517,6 +1530,25 @@ public class MyWebDriver {
 			e.printStackTrace();
 		}
 		
+	}
+
+	/**
+	 * 模拟按下空格键
+	 */
+	public void pressSpace(){
+//		pause(stepInterval);
+		sleep(1);
+		Robot rb = null;
+		try {
+			rb = new Robot();
+			rb.keyPress(KeyEvent.VK_SPACE);
+			rb.delay(100);
+			rb.keyRelease(KeyEvent.VK_SPACE);
+			log.info("按下空格键");
+		} catch (AWTException e) {
+			log.info("按下空格键失败");
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -1579,6 +1611,8 @@ public class MyWebDriver {
 			e.printStackTrace();
 		}
 	}
+
+
 
 	
 	/**
