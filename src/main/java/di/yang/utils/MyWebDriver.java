@@ -129,8 +129,8 @@ public class MyWebDriver  {
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", ReadSetting.ChromeDriverPath);
 				ChromeOptions chromeOptions = new ChromeOptions();
-//				chromeOptions.addArguments("--headless");
-//				chromeOptions.addArguments("window-size=1920,1080");
+				chromeOptions.addArguments("--headless");
+				chromeOptions.addArguments("window-size=1920,1080");
 				driver = new ChromeDriver(chromeOptions);
 				log.info("使用Chrome浏览器执行");
 				maxDriverScreen();
@@ -777,6 +777,17 @@ public class MyWebDriver  {
 	public void sleep(int second){
 		try {
 			Thread.sleep(second*1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 线程等待
+	 * @param millisecond 等待毫秒
+	 */
+	public void sleepMillisecond(int millisecond){
+		try {
+			Thread.sleep(millisecond);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

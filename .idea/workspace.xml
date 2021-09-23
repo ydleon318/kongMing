@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="244fead7-0aaa-4b20-9b3e-0733dde30c52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_0_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_10_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_jetty_repacked_9_4_12_v20180830.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_jetty_repacked_9_4_7_v20170914.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_141_59.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_3_8_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_leg_rc_3_141_59.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_leg_rc_3_8_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_141_59.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_8_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_res/geckodriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/driver_res/geckodriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kongMing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kongMing.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/LogFile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/LogFile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/controller/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/controller/testController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/yang/utils/MyWebDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webdriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webdriverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/di/yang/controller/testController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/controller/testController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver$7.class" afterDir="false" />
@@ -39,8 +18,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/di/yang/utils/MyWebDriver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kongMing-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kongMing-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kongMing-1.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/kongMing-1.0.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
@@ -306,7 +283,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575814808041" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/driver_res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -333,20 +310,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResponseJsonDemo.test07" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="kongMing" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ResponseJsonDemo" />
-      <option name="METHOD_NAME" value="test07" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -389,20 +352,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="webdriverTest.test04" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="kongMing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="webdriverTest" />
+      <option name="METHOD_NAME" value="test04" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="TestNG.ResponseJsonDemo.test07" />
       <item itemvalue="TestNG.webdriverTest.test01" />
       <item itemvalue="TestNG.webdriverTest.test02" />
       <item itemvalue="TestNG.webdriverTest.test03" />
+      <item itemvalue="TestNG.webdriverTest.test04" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="TestNG.webdriverTest.test04" />
         <item itemvalue="TestNG.webdriverTest.test03" />
         <item itemvalue="TestNG.webdriverTest.test02" />
         <item itemvalue="TestNG.webdriverTest.test01" />
-        <item itemvalue="TestNG.ResponseJsonDemo.test07" />
       </list>
     </recent_temporary>
   </component>

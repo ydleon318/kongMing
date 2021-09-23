@@ -11,6 +11,7 @@ import java.util.Map;
  * Created by yangdi on 2019/12/8
  */
 public class webdriverTest {
+    MyWebDriver dr = new MyWebDriver();
     WebProcessStepServiceImpl webProcessStepService = new WebProcessStepServiceImpl();
 
 //    @Test
@@ -32,7 +33,7 @@ public class webdriverTest {
 //    }
 //    @Test
     public void test03(){
-        MyWebDriver dr = new MyWebDriver();
+
         dr.setDriver("chrome");
         dr.open("http://fat.web.msp.uat-bj.tech.sinotrans.com/msp/platform");
         dr.type("70073421","//*[@id=\"pane-first\"]/div/span/form/div[1]/div/div/input");
@@ -76,6 +77,21 @@ public class webdriverTest {
         dr.click("//span[text()='刷新']");
 
 
+        dr.closeURL();
+    }
+
+//    @Test
+    public void test04(){
+        dr.setDriver("chrome");
+        dr.open("http://learningwx.hr.sinotrans.com/#/");
+        dr.type("13681500164","//input[@type='text']");
+        dr.type("Sinotr@ns123456","//input[@type='password']");
+        dr.click("//a[@type='button']");
+        dr.click("//*[contains(text(),'我的课程')]");
+        dr.click("//a[@class='scopeClas'][1]/descendant::div[@class='detail box font-info']");
+
+        dr.click("//button[@class='van-button van-button--default van-button--large van-dialog__confirm van-hairline--left']");
+        dr.click("//i[@class='fa fa-thumbs-up']");
         dr.closeURL();
     }
 

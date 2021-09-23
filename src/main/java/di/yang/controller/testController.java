@@ -120,5 +120,31 @@ public class testController extends BaseController{
         driver.closeURL();
     }
 
+    /**
+     * 自动点赞
+     * @param param
+     */
+    @PostMapping(value = "/typeFabulous")
+    public void typeFabulous(@RequestBody JSONObject param){
+        log.info("param is--->{}",param);
+        driver.setDriver("chrome");
+        driver.open("http://learningwx.hr.sinotrans.com/#/");
+        driver.type(param.getString("userName"),"//input[@type='text']");
+        driver.type(param.getString("passWorld"),"//input[@type='password']");
+        driver.click("//a[@type='button']");
+        driver.click("//*[contains(text(),'我的课程')]");
+        driver.click("//a[@class='scopeClas'][1]/descendant::div[@class='detail box font-info']");
+        driver.click("//button[@class='van-button van-button--default van-button--large van-dialog__confirm van-hairline--left']");
+
+        for (int i =0; i<=param.getInteger("integral"); i++){
+            if (param.getInteger("integral")>5000){
+                break;
+            }
+            driver.sleepMillisecond(100);
+            driver.click("//i[@class='fa fa-thumbs-up']");
+        }
+        driver.closeURL();
+    }
+
 
 }
