@@ -136,15 +136,14 @@ public class testController extends BaseController{
         driver.click("//a[@class='scopeClas'][1]/descendant::div[@class='detail box font-info']");
         driver.click("//button[@class='van-button van-button--default van-button--large van-dialog__confirm van-hairline--left']");
 
-        for (int i =0; i<=param.getInteger("integral"); i++){
-            if (param.getInteger("integral")>5000){
-                break;
+        for (int i =0; i<=param.getInteger("integral")*2; i++){
+            if(i%100==0){
+                log.info("已经点击"+i+"次了！！！");
             }
             driver.sleepMillisecond(100);
             driver.click("//i[@class='fa fa-thumbs-up']");
         }
         driver.closeURL();
     }
-
 
 }
